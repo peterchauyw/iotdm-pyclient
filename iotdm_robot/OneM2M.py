@@ -8,7 +8,8 @@
 json_payload = {
     2: '{"m2m:ae":{"api":"testAppId", "apn":"testAppName", "or":"http://ontology/ref","rr":true}}',
     3: '{"m2m:cnt":{"cr":null, "mbs":30, "or":"http://hey/you", "lbl":["key1"]}}',
-    4: '{"m2m:cin":{"con":"37"}}'
+    4: '{"m2m:cin":{"con":"37"}}',
+    'update': '{"m2m:ae":{"apn":"testAppName", "or":"localhost","rr":true}}'
                 }
 
 
@@ -19,8 +20,7 @@ class http:
     default_headers = {
         'content-type': 'application/vnd.onem2m-res+json',
         'X-M2M-Origin': '//localhost:10000',
-        'X-M2M-RI': '12345',
-        'X-M2M-OT': 'NOW'
+        'X-M2M-RI': '12345'
         }
 
 

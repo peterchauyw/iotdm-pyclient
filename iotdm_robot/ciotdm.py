@@ -1,11 +1,16 @@
 """This is the base library for criotdm. Both work for IoTDM project."""
 
 import requests
+from urlparse import urlparse
 from OneM2M import http
 
 op_provision = ":8181/restconf/operations/onem2m:onem2m-cse-provisioning"
 op_tree = ":8181/restconf/operational/onem2m:onem2m-resource-tree"
 op_cleanup = ":8181/restconf/operations/onem2m:onem2m-cleanup-store"
+
+headers = http.default_headers
+session = requests.Session()
+timeout = 5
 
 cse_payload = '''
 {    "input": {
@@ -77,37 +82,37 @@ def find_key(response, key):
     return dic.get(key1[0], None).get(key, None)
 
 
-def name(response):
+def getName(response):
     """Return the resource name in the response."""
     return find_key(response, "rn")
 
 
-def lastModifiedTime(response):
+def getLastModifiedTime(response):
     """Return the lastModifiedTime in the response."""
     return find_key(response, "lt")
 
 
-def resid(response):
+def getResid(response):
     """Return the resource id in the response."""
     return find_key(response, "ri")
 
 
-def parent(response):
+def getParent(response):
     """Return the parent resource id in the response."""
     return find_key(response, "pi")
 
 
-def content(response):
+def getContent(response):
     """Return the content the response."""
     return find_key(response, "con")
 
 
-def restype(response):
+def getRestype(response):
     """Return the resource type the response."""
     return find_key(response, "rty")
 
 
-def status(response):
+def getStatus(response):
     """Return the protocol status code in the response."""
     try:
         return response.status_code
@@ -115,7 +120,7 @@ def status(response):
         return None
 
 
-def headers(response):
+def getHeaders(response):
     """Return the protocol headers in the response."""
     try:
         return response.headers
@@ -123,7 +128,7 @@ def headers(response):
         return None
 
 
-def error(response):
+def getError(response):
     """Return the error string in the response."""
     try:
         return response.json()['error']
@@ -131,7 +136,7 @@ def error(response):
         return None
 
 
-def normalize(resourceURI):
+def getNormalize(resourceURI):
     """Remove the first / of /InCSE1/ae1."""
     if resourceURI is not None:
         if resourceURI[0] == "/":
@@ -139,159 +144,124 @@ def normalize(resourceURI):
     return resourceURI
 
 
-class connect:
 
-    """Create the connection."""
+def reconf(server="localhost", base='InCSE1',
+             auth=('admin', 'admin'), protocol="http"):
+    """Connect to a IoTDM server."""
+    session.auth = auth
+    session.headers.update({'content-type': 'application/json'})
+    payload = cse_payload % (base)
+    server = "%s://" % (protocol) + server
+    if base is not None:
+        url = server + op_provision
+        response = session.post(
+            url, data=payload, timeout=timeout)
+    return (response.status_code, response.text)
 
-    def __init__(self, server="localhost", base='InCSE1',
-                 auth=('admin', 'admin'), protocol="http"):
-        """Connect to a IoTDM server."""
-        if protocol == "http":
-            self.session = requests.Session()
-            self.session.auth = auth
-            self.session.headers.update({'content-type': 'application/json'})
-            self.timeout = 5
-            self.payload = cse_payload % (base)
-            self.headers = http.default_headers
-            self.server = "%s://" % (protocol) + server
-            if base is not None:
-                self.url = self.server + op_provision
-                self.response = self.session.post(
-                    self.url, data=self.payload, timeout=self.timeout)
-                print(self.response.text)
+def create(resourceURI, restype, attr=None, name=None):
+    """Create resource."""
+    payload = which_payload(restype)
+    payload = payload % (attr)
+    headers['X-M2M-NM'] = name
+    headers['content-type'] = 'application/vnd.onem2m-res+json;ty=%s' % (restype)
+    response = session.post(
+        resourceURI, payload, timeout=timeout, headers=headers)
+    return (response.status_code, response.text)
 
-    @staticmethod
-    def create(self, parent, restype, attr=None, name=None):
-        """Create resource."""
-        if parent is None:
-            return None
-        payload = which_payload(restype)
-        payload = payload % (attr)
-        self.headers['X-M2M-NM'] = name
-        self.headers['content-type'] = 'application/\
-            vnd.onem2m-res+json;ty=%s' % (restype)
-        parent = normalize(parent)
-        self.url = self.server + ":8282/%s?&rcn=1" % (
-            parent)
-        self.response = self.session.post(
-            self.url, payload, timeout=self.timeout, headers=self.headers)
-        return self.response
+# def createWithCommand(parent, restype,
+#                       command, attr=None, name=None):
+#     """Create resource."""
+#     payload = which_payload(restype)
+#     payload = payload % (attr)
+#     headers['X-M2M-NM'] = name
+#     headers['content-type'] = 'application/vnd.onem2m-res+json;ty=%s' % (restype)
+#     url = server + ":8282/%s?%s" % (
+#         parent, command)
+#     response = session.post(
+#         url, payload, timeout=timeout, headers=headers)
+#     return response
 
-    def createWithCommand(self, parent, restype,
-                          command, attr=None, name=None):
-        """Create resource."""
-        if parent is None:
-            return None
-        payload = which_payload(restype)
-        payload = payload % (attr)
-        if name is None:
-            self.headers['X-M2M-NM'] = None
-        else:
-            self.headers['X-M2M-NM'] = name
-        self.headers['content-type'] = 'application/\
-            vnd.onem2m-res+json;ty=%s' % (restype)
-        parent = normalize(parent)
-        self.url = self.server + ":8282/%s?%s" % (
-            parent, command)
-        self.response = self.session.post(
-            self.url, payload, timeout=self.timeout, headers=self.headers)
-        return self.response
+def retrieve(resourceURI):
+    """Retrieve resource."""
+    headers['content-type'] = 'application/vnd.onem2m-res+json'
+    response = session.get(
+        resourceURI, timeout=timeout, headers=headers
+    )
+    return (response.status_code, response.text)
 
-    def retrieve(self, resourceURI):
-        """Retrieve resource."""
-        if resourceURI is None:
-            return None
-        resourceURI = normalize(resourceURI)
-        self.url = self.server + ":8282/%s?rcn=5" % (resourceURI)
-        self.headers['X-M2M-NM'] = None
-        self.headers['content-type'] = 'application/vnd.onem2m-res+json'
-        self.response = self.session.get(
-            self.url, timeout=self.timeout, headers=self.headers
-        )
-        return self.response
+# def retrieveWithCommand(resourceURI, command):
+#     """Retrieve resource with command."""
+#     if resourceURI is None:
+#         return None
+#     if command is None:
+#         return None
+#     resourceURI = normalize(resourceURI)
+#     url = server + ":8282/%s?%s" % (resourceURI, command)
+#     headers['X-M2M-NM'] = None
+#     headers['content-type'] = 'application/vnd.onem2m-res+json'
+#     response = session.get(
+#         url, timeout=timeout, headers=headers
+#     )
+#     return response
 
-    def retrieveWithCommand(self, resourceURI, command):
-        """Retrieve resource with command."""
-        if resourceURI is None:
-            return None
-        if command is None:
-            return None
-        resourceURI = normalize(resourceURI)
-        self.url = self.server + ":8282/%s?%s" % (resourceURI, command)
-        self.headers['X-M2M-NM'] = None
-        self.headers['content-type'] = 'application/vnd.onem2m-res+json'
-        self.response = self.session.get(
-            self.url, timeout=self.timeout, headers=self.headers
-        )
-        return self.response
+def update(resourceURI, restype, attr=None):
+    """Update resource attr."""
+    payload = which_payload(restype)
+    payload = payload % (attr)
+    headers['content-type'] = 'application/vnd.onem2m-res+json'
+    response = session.put(
+        resourceURI, data=payload, timeout=timeout, headers=headers
+    )
+    return (response.status_code, response.text)
 
-    def update(self, resourceURI, restype, attr=None, name=None):
-        """Update resource attr."""
-        if resourceURI is None:
-            return None
-        resourceURI = normalize(resourceURI)
-        payload = which_payload(restype)
-        payload = payload % (attr)
-        if name is None:
-            self.headers['X-M2M-NM'] = None
-        else:
-            self.headers['X-M2M-NM'] = name
-        self.headers['content-type'] = 'application/vnd.onem2m-res+json'
-        self.url = self.server + ":8282/%s" % (resourceURI)
-        self.response = self.session.put(
-            self.url, payload, timeout=self.timeout, headers=self.headers)
-        return self.response
+# def updateWithCommand(resourceURI, restype,
+#                       command, attr=None, name=None):
+#     """Update resource attr."""
+#     if resourceURI is None:
+#         return None
+#     resourceURI = normalize(resourceURI)
+#     payload = which_payload(restype)
+#     payload = payload % (attr)
+#     if name is None:
+#         headers['X-M2M-NM'] = None
+#     else:
+#         headers['X-M2M-NM'] = name
+#     headers['content-type'] = 'application/vnd.onem2m-res+json'
+#     url = server + ":8282/%s?%s" % (resourceURI, command)
+#     response = session.put(
+#         url, payload, timeout=timeout, headers=headers)
+#     return response
 
-    def updateWithCommand(self, resourceURI, restype,
-                          command, attr=None, name=None):
-        """Update resource attr."""
-        if resourceURI is None:
-            return None
-        resourceURI = normalize(resourceURI)
-        payload = which_payload(restype)
-        payload = payload % (attr)
-        if name is None:
-            self.headers['X-M2M-NM'] = None
-        else:
-            self.headers['X-M2M-NM'] = name
-        self.headers['content-type'] = 'application/vnd.onem2m-res+json'
-        self.url = self.server + ":8282/%s?%s" % (resourceURI, command)
-        self.response = self.session.put(
-            self.url, payload, timeout=self.timeout, headers=self.headers)
-        return self.response
+def delete(resourceURI):
+    """Delete the resource with the provresourceURIed resourceURI."""
+    headers['content-type'] = 'application/vnd.onem2m-res+json'
+    response = session.delete(
+        resourceURI, timeout=timeout, headers=headers
+    )
+    return (response.status_code, response.text)
 
-    def delete(self, resourceURI):
-        """Delete the resource with the provresourceURIed resourceURI."""
-        if resourceURI is None:
-            return None
-        resourceURI = normalize(resourceURI)
-        self.url = self.server + ":8282/%s" % (resourceURI)
-        self.headers['X-M2M-NM'] = None
-        self.headers['content-type'] = 'application/vnd.onem2m-res+json'
-        self.response = self.session.delete(self.url, timeout=self.timeout,
-                                            headers=self.headers)
-        return self.response
+# def deleteWithCommand(resourceURI, command):
+#     """Delete the resource with the provresourceURIed resourceURI."""
+#     if resourceURI is None:
+#         return None
+#     resourceURI = normalize(resourceURI)
+#     url = server + ":8282/%s?%s" % (resourceURI, command)
+#     headers['X-M2M-NM'] = None
+#     headers['content-type'] = 'application/vnd.onem2m-res+json'
+#     response = session.delete(url, timeout=timeout,
+#                                         headers=headers)
+#     return response
 
-    def deleteWithCommand(self, resourceURI, command):
-        """Delete the resource with the provresourceURIed resourceURI."""
-        if resourceURI is None:
-            return None
-        resourceURI = normalize(resourceURI)
-        self.url = self.server + ":8282/%s?%s" % (resourceURI, command)
-        self.headers['X-M2M-NM'] = None
-        self.headers['content-type'] = 'application/vnd.onem2m-res+json'
-        self.response = self.session.delete(self.url, timeout=self.timeout,
-                                            headers=self.headers)
-        return self.response
+def tree():
+    """Get the resource tree."""
+    url = server + op_tree
+    response = session.get(url)
+    return response
 
-    def tree(self):
-        """Get the resource tree."""
-        self.url = self.server + op_tree
-        self.response = self.session.get(self.url)
-        return self.response
-
-    def kill(self):
-        """Kill the tree."""
-        self.url = self.server + op_cleanup
-        self.response = self.session.post(self.url)
-        return self.response
+def kill(server="localhost", auth=('admin', 'admin'), protocol="http"):
+    """Kill the tree."""
+    session.auth = auth
+    session.headers.update({'content-type': 'application/json'})
+    url = 'http://'+ server + op_cleanup
+    response = session.post(url)
+    return (response.status_code, response.text)

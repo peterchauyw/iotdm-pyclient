@@ -35,8 +35,9 @@ class Agent():
         tmp = self.uri.netloc.split(':')
         self.host = tmp[0]
         self.path = self.uri.path.strip("/")
+        self.query = self.uri.query
         if self.ty == None:
-            self.payload = ''
+            self.payload = OneM2M.json_payload["update"]
         else:
             self.payload = OneM2M.json_payload[self.ty]
         if op == ("post" or "POST"):
@@ -45,6 +46,11 @@ class Agent():
             reactor.callLater(1, self.getResource)
         elif op == ("put" or "PUT"):
             reactor.callLater(1, self.putResource)
+        elif op == ("delete" or "DELETE"):
+            reactor.callLater(1, self.deleteResource)
+        else:
+            print "Invalid operation"
+            sys.exit(2)
 
     def postResource(self):
 
@@ -66,6 +72,7 @@ class Agent():
 
         request = coap.Message(code=coap.GET)
         request.opt.uri_path = (self.path,)
+        request.opt.uri_query = (self.query,)
         request.opt.oneM2M_FR = ("127.0.0.1",)
         request.opt.oneM2M_RQI = ("12345",)
         request.opt.observe = 0
@@ -88,6 +95,18 @@ class Agent():
         d = self.protocol.request(request)
         d.addCallback(self.printResponse)
 
+
+    def deleteResource(self):
+
+        request = coap.Message(code=coap.DELETE)
+        request.opt.uri_path = (self.path,)
+        request.opt.oneM2M_FR = ("127.0.0.1",)
+        request.opt.oneM2M_RQI = ("12345",)
+        request.opt.observe = 0
+        request.remote = (self.host, coap.COAP_PORT)
+        d = self.protocol.request(request)
+        d.addCallback(self.printResponse)
+        d.addErrback(self.noResponse)
 
     def printResponse(self, response):
         print 'Response Code: ' + coap.responses[response.code]

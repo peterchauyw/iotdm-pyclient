@@ -44,6 +44,7 @@ class Agent():
         request.opt.observe = 0
         request.opt.oneM2M_FR = ("127.0.0.1",)
         request.opt.oneM2M_RQI = ("12345",)
+        request.opt.uri_query = ("fu=1",)
         request.remote = ("127.0.0.1", coap.COAP_PORT)
         d = protocol.request(request, observeCallback=self.printLaterResponse)
         d.addCallback(self.printResponse)
@@ -67,5 +68,5 @@ endpoint = resource.Endpoint(None)
 protocol = coap.Coap(endpoint)
 client = Agent(protocol)
 
-reactor.listenUDP(61616, protocol)
+reactor.listenUDP(0, protocol)
 reactor.run()
