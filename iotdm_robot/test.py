@@ -1,14 +1,22 @@
 import sys
 import ciotdm
 from urlparse import urlparse
+import json
 from txThings.examples.client import Agent
 from twisted.internet import reactor
 from twisted.python import log
 import iotdm_robot.txThings.txthings.coap as coap
 import iotdm_robot.txThings.txthings.resource as resource
+from iotdm_robot.onem2m.xml.protocols.ae import ae
 
 
 '''to-do: payload serialisation'''
+
+class Object:
+    def to_JSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__,
+            sort_keys=True, indent=4)
+
 
 def restConf(URI, Cse_name, username, password):
     uri = urlparse(URI)
@@ -100,6 +108,15 @@ def delete(URI):
 #restConf('http://localhost', 'ODL-oneM2M-Cse', 'admin', 'admin')
 
 #cleanup('http://localhost', 'admin', 'admin')
+
+
+ae = Object()
+ae.api = "TestAppId"
+ae.apn = "testAppName"
+setattr(ae, "or", "http://ontology/ref")
+ae.rr = True
+
+print(ae.to_JSON())
 
 #create("http://127.0.0.1:8282/ODL-oneM2M-Cse/AE1", 2, "AE")
 
