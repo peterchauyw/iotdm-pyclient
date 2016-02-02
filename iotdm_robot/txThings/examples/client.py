@@ -27,7 +27,7 @@ class Agent():
     should be sent as several blocks.
     """
 
-    def __init__(self, protocol, op, uri, ty=None, nm=None):
+    def __init__(self, protocol, op, uri, payload, ty=None, nm=None):
         self.protocol = protocol
         self.ty = ty
         self.nm = nm
@@ -39,7 +39,7 @@ class Agent():
         if self.ty == None:
             self.payload = OneM2M.json_payload["update"]
         else:
-            self.payload = OneM2M.json_payload[self.ty]
+            self.payload = payload
         if op == ("post" or "POST"):
             reactor.callLater(1, self.postResource)
         elif op == ("get" or "GET"):

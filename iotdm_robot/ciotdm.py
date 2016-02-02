@@ -28,50 +28,50 @@ cse_payload = '''
 }
 '''
 
-resourcepayload = '''
-{
-    %s
-}
-'''
-
-ae_payload = '''
-{
-    "m2m:ae":{%s}
-}
-'''
-
-cnt_payload = '''
-{
-    "m2m:cnt":{%s}
-}
-'''
-
-cin_payload = '''
-{
-   "m2m:cin":{%s}
-}
-'''
-
-sub_payload = '''
-{
-    "m2m:sub":{%s}
-}
-'''
-
-
-def which_payload(restype):
-    """Choose the correct payload header for each resource."""
-    restype = int(restype)
-    if restype == 2:
-        return ae_payload
-    elif restype == 3:
-        return cnt_payload
-    elif restype == 4:
-        return cin_payload
-    elif restype == 23:
-        return sub_payload
-    else:
-        return resourcepayload
+# resourcepayload = '''
+# {
+#     %s
+# }
+# '''
+#
+# ae_payload = '''
+# {
+#     "m2m:ae":{%s}
+# }
+# '''
+#
+# cnt_payload = '''
+# {
+#     "m2m:cnt":{%s}
+# }
+# '''
+#
+# cin_payload = '''
+# {
+#    "m2m:cin":{%s}
+# }
+# '''
+#
+# sub_payload = '''
+# {
+#     "m2m:sub":{%s}
+# }
+# '''
+#
+#
+# def which_payload(restype):
+#     """Choose the correct payload header for each resource."""
+#     restype = int(restype)
+#     if restype == 2:
+#         return ae_payload
+#     elif restype == 3:
+#         return cnt_payload
+#     elif restype == 4:
+#         return cin_payload
+#     elif restype == 23:
+#         return sub_payload
+#     else:
+#         return resourcepayload
 
 
 def find_key(response, key):
@@ -158,10 +158,8 @@ def reconf(server="localhost", base='InCSE1',
             url, data=payload, timeout=timeout)
     return (response.status_code, response.text)
 
-def create(resourceURI, restype, attr=None, name=None):
+def create(resourceURI, restype, payload=None, name=None):
     """Create resource."""
-    payload = which_payload(restype)
-    payload = payload % (attr)
     headers['X-M2M-NM'] = name
     headers['content-type'] = 'application/vnd.onem2m-res+json;ty=%s' % (restype)
     response = session.post(

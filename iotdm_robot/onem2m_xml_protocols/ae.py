@@ -18,6 +18,7 @@
 #
 
 import sys
+import json
 import re as re_
 import base64
 import datetime as datetime_
@@ -620,6 +621,7 @@ class ae(GeneratedsSuper):
     superclass = None
     def __init__(self, apn=None, api=None, aei=None, poa=None, or_=None, nl=None, rr=None, csz=None, ch=None, cnt=None, grp=None, acp=None, sub=None, pch=None, sch=None):
         self.original_tagname_ = None
+        self.payload = None
         self.apn = apn
         self.api = api
         self.aei = aei
@@ -628,34 +630,34 @@ class ae(GeneratedsSuper):
         self.nl = nl
         self.rr = rr
         self.csz = csz
-        if ch is None:
-            self.ch = []
-        else:
-            self.ch = ch
-        if cnt is None:
-            self.cnt = []
-        else:
-            self.cnt = cnt
-        if grp is None:
-            self.grp = []
-        else:
-            self.grp = grp
-        if acp is None:
-            self.acp = []
-        else:
-            self.acp = acp
-        if sub is None:
-            self.sub = []
-        else:
-            self.sub = sub
-        if pch is None:
-            self.pch = []
-        else:
-            self.pch = pch
-        if sch is None:
-            self.sch = []
-        else:
-            self.sch = sch
+        # if ch is None:
+        #     self.ch = []
+        # else:
+        #     self.ch = ch
+        # if cnt is None:
+        #     self.cnt = []
+        # else:
+        #     self.cnt = cnt
+        # if grp is None:
+        #     self.grp = []
+        # else:
+        #     self.grp = grp
+        # if acp is None:
+        #     self.acp = []
+        # else:
+        #     self.acp = acp
+        # if sub is None:
+        #     self.sub = []
+        # else:
+        #     self.sub = sub
+        # if pch is None:
+        #     self.pch = []
+        # else:
+        #     self.pch = pch
+        # if sch is None:
+        #     self.sch = []
+        # else:
+        #     self.sch = sch
     def factory(*args_, **kwargs_):
         if ae.subclass:
             return ae.subclass(*args_, **kwargs_)
@@ -671,7 +673,7 @@ class ae(GeneratedsSuper):
     def get_poa(self): return self.poa
     def set_poa(self, poa): self.poa = poa
     def get_or(self): return self.or_
-    def set_or(self, or_): self.or_ = or_
+    def set_or(self, or_): setattr(self, "or", or_)
     def get_nl(self): return self.nl
     def set_nl(self, nl): self.nl = nl
     def get_rr(self): return self.rr
@@ -719,7 +721,7 @@ class ae(GeneratedsSuper):
             self.api is not None or
             self.aei is not None or
             self.poa is not None or
-            self.or_ is not None or
+            getattr(self, "or") is not None or
             self.nl is not None or
             self.rr is not None or
             self.csz is not None or
@@ -734,6 +736,12 @@ class ae(GeneratedsSuper):
             return True
         else:
             return False
+
+    def to_JSON(self):
+        self.payload = {"m2m:ae":{k: v for k, v in self.__dict__.iteritems() if v is not None}}
+        return json.dumps(self, default=lambda o: o.payload,
+            sort_keys=True, indent=4)
+
     def export(self, outfile, level, namespace_='m2m:', name_='ae', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'

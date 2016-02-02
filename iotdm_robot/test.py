@@ -7,15 +7,13 @@ from twisted.internet import reactor
 from twisted.python import log
 import iotdm_robot.txThings.txthings.coap as coap
 import iotdm_robot.txThings.txthings.resource as resource
-from iotdm_robot.onem2m.xml.protocols.ae import ae
+from iotdm_robot.onem2m_xml_protocols.ae import ae
+from iotdm_robot.onem2m_xml_protocols.container import cnt
+from iotdm_robot.onem2m_xml_protocols.contentinstance import cin
+from iotdm_robot.onem2m_xml_protocols.subscription import sub
 
 
 '''to-do: payload serialisation'''
-
-class Object:
-    def to_JSON(self):
-        return json.dumps(self, default=lambda o: o.__dict__,
-            sort_keys=True, indent=4)
 
 
 def restConf(URI, Cse_name, username, password):
@@ -30,18 +28,17 @@ def cleanup(URI, username, password):
     print str(response[0]) + '\n' + response[1]
 
 
-def create(URI, resource_type, resource_name):
+def create(URI, resource_type, resource_name, payload):
     uri = urlparse(URI)
     if uri.scheme == "http":
-        attr = '"api":"testAppId", "apn":"testAppName", "or":"http://ontology/ref","rr":true'
-        response = ciotdm.create(URI, resource_type, attr, resource_name)
+        response = ciotdm.create(URI, resource_type, payload, resource_name)
         print str(response[0]) + '\n' + response[1]
 
     elif uri.scheme == "coap":
         log.startLogging(sys.stdout)
         endpoint = resource.Endpoint(None)
         protocol = coap.Coap(endpoint)
-        Agent(protocol, "post", URI, resource_type, resource_name)
+        Agent(protocol, "post", URI, payload, resource_type, resource_name)
         reactor.listenUDP(0, protocol)
         reactor.run()
 
@@ -110,15 +107,41 @@ def delete(URI):
 #cleanup('http://localhost', 'admin', 'admin')
 
 
-ae = Object()
-ae.api = "TestAppId"
-ae.apn = "testAppName"
-setattr(ae, "or", "http://ontology/ref")
-ae.rr = True
 
-print(ae.to_JSON())
+AE = ae()
+AE.set_api("TestAppId")
+AE.set_apn("testAppName")
+AE.set_or("http://ontology/ref")
+AE.set_rr(True)
+payload = AE.to_JSON()
+create("http://127.0.0.1:8282/ODL-oneM2M-Cse", 2, "AE10", payload)
 
-#create("http://127.0.0.1:8282/ODL-oneM2M-Cse/AE1", 2, "AE")
+
+
+
+# container = cnt()
+# container.set_mbs(30)
+# container.set_or("http://hey/you")
+# container.set_lbl(["key1"])
+# payload = container.to_JSON()
+# create("coap://127.0.0.1:5683/ODL-oneM2M-Cse/AE", 3, "Container", payload)
+
+
+
+
+# con_instance = cin()
+# con_instance.set_con("37")
+# payload = con_instance.to_JSON()
+# create("coap://127.0.0.1:5683/ODL-oneM2M-Cse/AE/Container", 4, "Instance", payload)
+
+
+
+# subscription = sub()
+# subscription.set_nu(["10.195.131.12"])
+# payload  = subscription.to_JSON()
+# create("coap://127.0.0.1:5683/ODL-oneM2M-Cse/AE/Container", 23, "sub1", payload)
+
+
 
 #retrieve("http://127.0.0.1:8282/ODL-oneM2M-Cse?fu=1")
 
