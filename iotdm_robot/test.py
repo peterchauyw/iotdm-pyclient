@@ -13,7 +13,6 @@ from iotdm_robot.onem2m_xml_protocols.contentinstance import cin
 from iotdm_robot.onem2m_xml_protocols.subscription import sub
 
 
-'''to-do: payload serialisation'''
 
 
 def restConf(URI, Cse_name, username, password):
@@ -38,7 +37,7 @@ def create(URI, resource_type, resource_name, payload):
         log.startLogging(sys.stdout)
         endpoint = resource.Endpoint(None)
         protocol = coap.Coap(endpoint)
-        Agent(protocol, "post", URI, payload, resource_type, resource_name)
+        Agent(protocol, "post", URI, payload=payload, ty=resource_type, nm=resource_name)
         reactor.listenUDP(0, protocol)
         reactor.run()
 
@@ -65,17 +64,17 @@ def retrieve(URI):
         sys.exit(2)
 
 
-def update(URI, resource_type, attribute):
+def update(URI, resource_type, payload):
     uri = urlparse(URI)
     if uri.scheme == "http":
-        response = ciotdm.update(URI, resource_type, attribute)
+        response = ciotdm.update(URI, resource_type, payload)
         print str(response[0]) + '\n' + response[1]
 
     elif uri.scheme == "coap":
         log.startLogging(sys.stdout)
         endpoint = resource.Endpoint(None)
         protocol = coap.Coap(endpoint)
-        Agent(protocol, "put", URI)
+        Agent(protocol, "put", URI, payload=payload, ty=resource_type)
         reactor.listenUDP(0, protocol)
         reactor.run()
 
@@ -102,19 +101,19 @@ def delete(URI):
         sys.exit(2)
 
 
-#restConf('http://localhost', 'ODL-oneM2M-Cse', 'admin', 'admin')
+# restConf('http://localhost', 'ODL-oneM2M-Cse', 'admin', 'admin')
 
 #cleanup('http://localhost', 'admin', 'admin')
 
 
 
-AE = ae()
-AE.set_api("TestAppId")
-AE.set_apn("testAppName")
-AE.set_or("http://ontology/ref")
-AE.set_rr(True)
-payload = AE.to_JSON()
-create("http://127.0.0.1:8282/ODL-oneM2M-Cse", 2, "AE10", payload)
+# AE = ae()
+# AE.set_api("TestAppId")
+# AE.set_apn("testAppName")
+# AE.set_or("http://ontology/ref")
+# AE.set_rr(True)
+# payload = AE.to_JSON()
+# create("http://127.0.0.1:8282/ODL-oneM2M-Cse", 2, "AE10", payload)
 
 
 
@@ -145,6 +144,7 @@ create("http://127.0.0.1:8282/ODL-oneM2M-Cse", 2, "AE10", payload)
 
 #retrieve("http://127.0.0.1:8282/ODL-oneM2M-Cse?fu=1")
 
-#update("http://127.0.0.1:8282/ODL-oneM2M-Cse/AE3", 2, '"apn":"testAppName", "or":"http://ontology/ref","rr":true')
+
+
 
 #delete("http://127.0.0.1:8282/ODL-oneM2M-Cse/AE4")

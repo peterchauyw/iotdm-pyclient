@@ -202,10 +202,8 @@ def retrieve(resourceURI):
 #     )
 #     return response
 
-def update(resourceURI, restype, attr=None):
+def update(resourceURI, restype, payload=None):
     """Update resource attr."""
-    payload = which_payload(restype)
-    payload = payload % (attr)
     headers['content-type'] = 'application/vnd.onem2m-res+json'
     response = session.put(
         resourceURI, data=payload, timeout=timeout, headers=headers
