@@ -101,12 +101,14 @@ def delete(URI):
         sys.exit(2)
 
 
-# restConf('http://localhost', 'ODL-oneM2M-Cse', 'admin', 'admin')
+'''RestConf call'''
+#restConf('http://localhost', 'ODL-oneM2M-Cse', 'admin', 'admin')
 
+'''Cleanup call'''
 #cleanup('http://localhost', 'admin', 'admin')
 
 
-
+'''AE Creation'''
 # AE = ae()
 # AE.set_api("TestAppId")
 # AE.set_apn("testAppName")
@@ -116,8 +118,7 @@ def delete(URI):
 # create("http://127.0.0.1:8282/ODL-oneM2M-Cse", 2, "AE10", payload)
 
 
-
-
+'''Container Creation'''
 # container = cnt()
 # container.set_mbs(30)
 # container.set_or("http://hey/you")
@@ -126,25 +127,23 @@ def delete(URI):
 # create("coap://127.0.0.1:5683/ODL-oneM2M-Cse/AE", 3, "Container", payload)
 
 
-
-
+'''Content-instance Creation'''
 # con_instance = cin()
 # con_instance.set_con("37")
 # payload = con_instance.to_JSON()
 # create("coap://127.0.0.1:5683/ODL-oneM2M-Cse/AE/Container", 4, "Instance", payload)
 
 
-
+'''Subscription creation'''
 # subscription = sub()
 # subscription.set_nu(["10.195.131.12"])
 # payload  = subscription.to_JSON()
 # create("coap://127.0.0.1:5683/ODL-oneM2M-Cse/AE/Container", 23, "sub1", payload)
 
 
-
+'''Get'''
 #retrieve("http://127.0.0.1:8282/ODL-oneM2M-Cse?fu=1")
 
 
-
-
+'''Delete'''
 #delete("http://127.0.0.1:8282/ODL-oneM2M-Cse/AE4")
