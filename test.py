@@ -5,12 +5,12 @@ import json
 from txThings.examples.client import Agent
 from twisted.internet import reactor
 from twisted.python import log
-import iotdm_robot.txThings.txthings.coap as coap
-import iotdm_robot.txThings.txthings.resource as resource
-from iotdm_robot.onem2m_xml_protocols.ae import ae
-from iotdm_robot.onem2m_xml_protocols.container import cnt
-from iotdm_robot.onem2m_xml_protocols.contentinstance import cin
-from iotdm_robot.onem2m_xml_protocols.subscription import sub
+import txThings.txthings.coap as coap
+import txThings.txthings.resource as resource
+from onem2m_xml_protocols.ae import ae
+from onem2m_xml_protocols.container import cnt
+from onem2m_xml_protocols.contentinstance import cin
+from onem2m_xml_protocols.subscription import sub
 
 
 
@@ -124,14 +124,14 @@ def delete(URI):
 # container.set_or("http://hey/you")
 # container.set_lbl(["key1"])
 # payload = container.to_JSON()
-# create("coap://127.0.0.1:5683/ODL-oneM2M-Cse/AE", 3, "Container", payload)
-
+# create("coap://10.195.131.12:5683/ODL-oneM2M-Cse/TestAE", 3, "Container", payload)
 
 '''Content-instance Creation'''
-# con_instance = cin()
-# con_instance.set_con("37")
-# payload = con_instance.to_JSON()
-# create("coap://127.0.0.1:5683/ODL-oneM2M-Cse/AE/Container", 4, "Instance", payload)
+# for i in range(2,1000000):
+#     con_instance = cin()
+#     con_instance.set_con("37")
+#     payload = con_instance.to_JSON()
+#     create("http://10.195.131.12:8282/ODL-oneM2M-Cse/TestAE/Container", 4, "Instance"+str(i), payload)
 
 
 '''Subscription creation'''

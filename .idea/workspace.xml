@@ -2,7 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c872fe8-cf48-4412-b05f-54aacaff0e11" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iotdm_robot/test.py" afterPath="$PROJECT_DIR$/iotdm_robot/test.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/ciotdm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/criotdm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/ddm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/iotdm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/iotdm.tsv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/t1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OneM2M.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/Robot-Tutorial.ppt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/SendInfo.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/build the tree.robot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/ciotdm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/criotdm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/ae.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/container.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/contentinstance.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/subscription.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/pyclient_cli.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/client.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/clientGET.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/client_observe_block.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/CourierNew.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/CourierNewBold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/browser.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/coapbrowser.kv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/data/aneska-0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/data/aneska.atlas" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/data/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/data/splash.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/main.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/widgets/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/widgets/browsingcard.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_server/main.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/rd.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/server.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/setup.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/coap.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/error.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/ext/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/ext/link_header.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/resource.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/test/test_coap.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="python-cangji.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,40 +73,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OneM2M.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iotdm_robot/OneM2M.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iotdm_robot/txThings/examples/client.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-              <folding>
-                <element signature="e#56#66#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ciotdm.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iotdm_robot/ciotdm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="205" column="31" selection-start-line="205" selection-start-column="31" selection-end-line="205" selection-end-column="31" />
-              <folding>
-                <element signature="e#74#89#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sessions.py" pinned="false" current-in-tab="false">
         <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/requests/sessions.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,11 +83,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/iotdm_robot/test.py">
+      <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/txThings/examples/client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.225352">
-              <caret line="147" column="12" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+              <folding>
+                <element signature="e#56#66#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ciotdm.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ciotdm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="e#74#89#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="criotdm.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/criotdm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OneM2M.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OneM2M.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -79,48 +139,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pyclient_cli.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iotdm_robot/pyclient_cli.py">
+      <file leaf-file-name="pyclient_cli.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pyclient_cli.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.36741215">
+              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+              <folding>
+                <element signature="e#156#171#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="argparse.py" pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/argparse.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+              <caret line="1705" column="0" selection-start-line="1705" selection-start-column="0" selection-end-line="1705" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subscription.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/subscription.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="618" column="9" selection-start-line="618" selection-start-column="0" selection-end-line="618" selection-end-column="9" />
-              <folding>
-                <element signature="e#431#441#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="container.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/container.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6103" column="42" selection-start-line="6103" selection-start-column="42" selection-end-line="6103" selection-end-column="42" />
-              <folding>
-                <element signature="e#419#429#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contentinstance.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/contentinstance.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="665" selection-end-column="37" />
-              <folding>
-                <element signature="e#443#453#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -164,18 +200,22 @@
         <option value="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/container.py" />
         <option value="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/contentinstance.py" />
         <option value="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/subscription.py" />
-        <option value="$PROJECT_DIR$/iotdm_robot/pyclient_cli.py" />
         <option value="$PROJECT_DIR$/iotdm_robot/OneM2M.py" />
         <option value="$PROJECT_DIR$/iotdm_robot/ciotdm.py" />
-        <option value="$PROJECT_DIR$/iotdm_robot/txThings/examples/client.py" />
         <option value="$PROJECT_DIR$/iotdm_robot/test.py" />
+        <option value="$PROJECT_DIR$/iotdm_robot/pyclient_cli.py" />
+        <option value="$PROJECT_DIR$/iotdm_robot/txThings/examples/client.py" />
+        <option value="$PROJECT_DIR$/txThings/examples/client.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/pyclient_cli.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="1440" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="828" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -245,8 +285,18 @@
               <option name="myItemId" value="iotdm-pyclient" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="iotdm_robot" />
+              <option name="myItemId" value="python-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iotdm-pyclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="txThings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -260,11 +310,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="iotdm_robot" />
+              <option name="myItemId" value="txThings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="txThings" />
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iotdm-pyclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="onem2m_xml_protocols" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -279,41 +343,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="Object&#9;null&#9;null&#10;console&#9;ACTION&#9;com.jetbrains.python.console.RunPythonConsoleAction" />
   </component>
-  <component name="RunManager" selected="Python.test (1)">
-    <configuration default="false" name="clientPUT (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/iotdm_robot/txThings/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python-client" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iotdm_robot/txThings/examples/clientPUT.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="coap" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/iotdm_robot/txThings/txthings" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python-client" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iotdm_robot/txThings/txthings/coap.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.test">
     <configuration default="false" name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -361,6 +391,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python-client" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iotdm_robot/onem2m.xml.protocols/ae.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="pyclient_cli" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/iotdm_robot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python-client" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iotdm_robot/pyclient_cli.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python-client" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -488,19 +552,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.clientPUT (2)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.coap" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.clientGET" />
-      <item index="4" class="java.lang.String" itemvalue="Python.ae" />
+      <item index="0" class="java.lang.String" itemvalue="Python.test (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.clientGET" />
+      <item index="2" class="java.lang.String" itemvalue="Python.ae" />
+      <item index="3" class="java.lang.String" itemvalue="Python.pyclient_cli" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ae" />
-        <item index="2" class="java.lang.String" itemvalue="Python.clientGET" />
-        <item index="3" class="java.lang.String" itemvalue="Python.coap" />
-        <item index="4" class="java.lang.String" itemvalue="Python.clientPUT (2)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.pyclient_cli" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ae" />
+        <item index="4" class="java.lang.String" itemvalue="Python.clientGET" />
       </list>
     </recent_temporary>
   </component>
@@ -518,13 +582,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="828" extended-state="6" />
+    <frame x="1440" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18604651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885212" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13902053" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40379405" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39710444" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39947438" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -573,61 +637,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/ciotdm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#74#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/txThings/txthings/coap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/criotdm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/twisted/internet/reactor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="44" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/txThings/txthings/coap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -806,13 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_server/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/twisted/internet/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14634146">
@@ -820,120 +826,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/txThings/examples/client_observe_block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/txThings/txthings/coap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1158" column="0" selection-start-line="1158" selection-start-column="0" selection-end-line="1158" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/txThings/examples/clientGET.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="23" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/criotdm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12729844">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/ae.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="739" column="0" selection-start-line="739" selection-start-column="0" selection-end-line="742" selection-end-column="37" />
-          <folding>
-            <element signature="e#391#401#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/contentinstance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="662" column="0" selection-start-line="662" selection-start-column="0" selection-end-line="665" selection-end-column="37" />
-          <folding>
-            <element signature="e#443#453#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/subscription.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="618" column="9" selection-start-line="618" selection-start-column="0" selection-end-line="618" selection-end-column="9" />
-          <folding>
-            <element signature="e#431#441#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/container.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6103" column="42" selection-start-line="6103" selection-start-column="42" selection-end-line="6103" selection-end-column="42" />
-          <folding>
-            <element signature="e#419#429#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/argparse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31735888">
-          <caret line="1262" column="8" selection-start-line="1262" selection-start-column="8" selection-end-line="1262" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/txThings/txthings/resource.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6619718">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/pyclient_cli.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+          <caret line="1705" column="0" selection-start-line="1705" selection-start-column="0" selection-end-line="1705" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/OneM2M.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/ciotdm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="205" column="31" selection-start-line="205" selection-start-column="31" selection-end-line="205" selection-end-column="31" />
-          <folding>
-            <element signature="e#74#89#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -945,22 +842,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/txThings/examples/client.py">
+    <entry file="file://$PROJECT_DIR$/txThings/examples/client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
           <folding>
             <element signature="e#56#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iotdm_robot/test.py">
+    <entry file="file://$PROJECT_DIR$/ciotdm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.225352">
-          <caret line="147" column="12" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#74#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/criotdm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OneM2M.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyclient_cli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36741215">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+          <folding>
+            <element signature="e#156#171#0" expanded="true" />
           </folding>
         </state>
       </provider>

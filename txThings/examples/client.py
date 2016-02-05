@@ -6,15 +6,15 @@ Created on 08-09-2012
 
 import sys
 from urlparse import urlparse
-from iotdm_robot import OneM2M
+import OneM2M
 
 from twisted.internet.defer import Deferred
 from twisted.internet.protocol import DatagramProtocol
 from twisted.internet import reactor
 from twisted.python import log
 
-import iotdm_robot.txThings.txthings.coap as coap
-import iotdm_robot.txThings.txthings.resource as resource
+import txThings.txthings.coap as coap
+import txThings.txthings.resource as resource
 
 
 class Agent():
