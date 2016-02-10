@@ -2,57 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c872fe8-cf48-4412-b05f-54aacaff0e11" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/ciotdm.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/criotdm.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/ddm.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/iotdm.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/iotdm.tsv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OldVersion/t1.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/OneM2M.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/Robot-Tutorial.ppt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/SendInfo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/build the tree.robot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/ciotdm.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/criotdm.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/ae.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/container.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/contentinstance.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/onem2m_xml_protocols/subscription.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/pyclient_cli.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/client.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/clientGET.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/client_observe_block.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/CourierNew.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/CourierNewBold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/browser.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/coapbrowser.kv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/data/aneska-0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/data/aneska.atlas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/data/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/data/splash.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/widgets/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_browser/widgets/browsingcard.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/kivy_server/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/rd.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/examples/server.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/setup.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/coap.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/error.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/ext/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/ext/link_header.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/resource.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iotdm_robot/txThings/txthings/test/test_coap.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pyclient_cli.py" afterPath="$PROJECT_DIR$/pyclient_cli.py" />
     </list>
     <ignored path="python-cangji.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -131,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="131" column="32" selection-start-line="131" selection-start-column="32" selection-end-line="131" selection-end-column="32" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -142,8 +92,8 @@
       <file leaf-file-name="pyclient_cli.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pyclient_cli.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36741215">
-              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.4888179">
+              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
               <folding>
                 <element signature="e#156#171#0" expanded="true" />
               </folding>
@@ -155,7 +105,7 @@
         <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/argparse.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1705" column="0" selection-start-line="1705" selection-start-column="0" selection-end-line="1705" selection-end-column="0" />
+              <caret line="1387" column="0" selection-start-line="1387" selection-start-column="0" selection-end-line="1387" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -343,7 +293,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="Object&#9;null&#9;null&#10;console&#9;ACTION&#9;com.jetbrains.python.console.RunPythonConsoleAction" />
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.pyclient_cli (1)">
     <configuration default="false" name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -357,23 +307,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python-client" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iotdm_robot/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="clientGET" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/iotdm_robot/txThings/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python-client" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iotdm_robot/txThings/examples/clientGET.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -425,6 +358,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python-client" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="pyclient_cli (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python-client" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyclient_cli.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -553,18 +503,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.test (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.clientGET" />
-      <item index="2" class="java.lang.String" itemvalue="Python.ae" />
-      <item index="3" class="java.lang.String" itemvalue="Python.pyclient_cli" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test" />
+      <item index="1" class="java.lang.String" itemvalue="Python.ae" />
+      <item index="2" class="java.lang.String" itemvalue="Python.pyclient_cli" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.pyclient_cli (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.pyclient_cli" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.ae" />
-        <item index="4" class="java.lang.String" itemvalue="Python.clientGET" />
+        <item index="0" class="java.lang.String" itemvalue="Python.pyclient_cli (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.pyclient_cli" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.ae" />
       </list>
     </recent_temporary>
   </component>
@@ -826,14 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/argparse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1705" column="0" selection-start-line="1705" selection-start-column="0" selection-end-line="1705" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/requests/sessions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -878,10 +820,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/argparse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1387" column="0" selection-start-line="1387" selection-start-column="0" selection-end-line="1387" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="131" column="32" selection-start-line="131" selection-start-column="32" selection-end-line="131" selection-end-column="32" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -890,8 +840,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pyclient_cli.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36741215">
-          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.4888179">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
           <folding>
             <element signature="e#156#171#0" expanded="true" />
           </folding>
