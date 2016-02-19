@@ -109,13 +109,13 @@ def delete(URI):
 
 
 '''AE Creation'''
-# AE = ae()
-# AE.set_api("TestAppId")
-# AE.set_apn("testAppName")
-# AE.set_or("http://ontology/ref")
-# AE.set_rr(True)
-# payload = AE.to_JSON()
-# create("http://127.0.0.1:8282/ODL-oneM2M-Cse", 2, "AE10", payload)
+AE = ae()
+AE.set_api("TestAppId")
+AE.set_apn("testAppName")
+AE.set_or("http://ontology/ref")
+AE.set_rr(True)
+payload = AE.to_JSON()
+create("coap://10.195.131.10:5683/ODL-oneM2M-Cse", 2, "AE10", payload)
 
 
 '''Container Creation'''
@@ -124,7 +124,7 @@ def delete(URI):
 # container.set_or("http://hey/you")
 # container.set_lbl(["key1"])
 # payload = container.to_JSON()
-# create("coap://10.195.131.12:5683/ODL-oneM2M-Cse/TestAE", 3, "Container", payload)
+# create("coap://10.195.131.10:5683/ODL-oneM2M-Cse/ae", 3, "Container", payload)
 
 '''Content-instance Creation'''
 # for i in range(2,1000000):
@@ -142,7 +142,7 @@ def delete(URI):
 
 
 '''Get'''
-#retrieve("http://127.0.0.1:8282/ODL-oneM2M-Cse?fu=1")
+retrieve("http://10.195.131.10:8282/ODL-oneM2M-Cse?fu=1")
 
 
 '''Delete'''

@@ -5,6 +5,7 @@ Created on 08-09-2012
 '''
 
 import sys
+import time
 from urlparse import urlparse
 import OneM2M
 
@@ -38,13 +39,13 @@ class Agent():
         self.query = self.uri.query
         self.payload = payload
         if op == "post":
-            reactor.callLater(1, self.postResource)
+            reactor.callLater(0, self.postResource)
         elif op == "get":
-            reactor.callLater(1, self.getResource)
+            reactor.callLater(0, self.getResource)
         elif op == "put":
-            reactor.callLater(1, self.putResource)
+            reactor.callLater(0, self.putResource)
         elif op == "delete":
-            reactor.callLater(1, self.deleteResource)
+            reactor.callLater(0, self.deleteResource)
         else:
             print "Invalid operation"
             sys.exit(2)
@@ -64,6 +65,8 @@ class Agent():
         request.remote = (self.host, coap.COAP_PORT)
         d = self.protocol.request(request)
         d.addCallback(self.printResponse)
+        d.addErrback(self.noResponse)
+
 
     def getResource(self):
 
@@ -91,6 +94,7 @@ class Agent():
         request.remote = (self.host, coap.COAP_PORT)
         d = self.protocol.request(request)
         d.addCallback(self.printResponse)
+        d.addErrback(self.noResponse)
 
 
     def deleteResource(self):
@@ -105,12 +109,15 @@ class Agent():
         d.addCallback(self.printResponse)
         d.addErrback(self.noResponse)
 
+
     def printResponse(self, response):
         print 'Response Code: ' + coap.responses[response.code]
         print 'Payload: ' + response.payload
+        reactor.stop()
+
 
 
     def noResponse(self, failure):
         print 'Failed to fetch resource:'
         print failure
-        #reactor.stop()
+        reactor.stop()
