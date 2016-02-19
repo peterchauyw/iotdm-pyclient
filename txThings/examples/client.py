@@ -2,12 +2,17 @@
 Created on 08-09-2012
 
 @author: Maciej Wasilak
+
+Modified on 01-07-2016
+
+@by: Peter Chau
 '''
 
 import sys
 import time
 from urlparse import urlparse
 import OneM2M
+import socket
 
 from twisted.internet.defer import Deferred
 from twisted.internet.protocol import DatagramProtocol
@@ -34,7 +39,7 @@ class Agent():
         self.nm = nm
         self.uri = urlparse(uri)
         tmp = self.uri.netloc.split(':')
-        self.host = tmp[0]
+        self.host = socket.gethostbyname(tmp[0])
         self.path = self.uri.path.strip("/")
         self.query = self.uri.query
         self.payload = payload
@@ -110,11 +115,15 @@ class Agent():
         d.addErrback(self.noResponse)
 
 
+    def gotIP(ip):
+        return ip
+        reactor.callLater(0, reactor.stop)
+
+
     def printResponse(self, response):
         print 'Response Code: ' + coap.responses[response.code]
         print 'Payload: ' + response.payload
         reactor.stop()
-
 
 
     def noResponse(self, failure):

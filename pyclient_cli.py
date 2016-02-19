@@ -36,8 +36,10 @@ def __main__():
     if args.operation == 'restconf':
         test.restConf(url, args.name, 'admin', 'admin')
 
-    if args.operation =='kill':
+
+    if args.operation == 'kill':
         test.cleanup(url, 'admin', 'admin')
+
 
     if args.operation == 'create':
         url = url + ':%s/%s' %(args.port, args.path)

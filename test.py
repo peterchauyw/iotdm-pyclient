@@ -14,7 +14,6 @@ from onem2m_xml_protocols.subscription import sub
 
 
 
-
 def restConf(URI, Cse_name, username, password):
     uri = urlparse(URI)
     response = ciotdm.reconf(uri.netloc, Cse_name, (username, password))
@@ -102,7 +101,7 @@ def delete(URI):
 
 
 '''RestConf call'''
-#restConf('http://localhost', 'ODL-oneM2M-Cse', 'admin', 'admin')
+# restConf('http://localhost', 'ODL-oneM2M-Cse', 'admin', 'admin')
 
 '''Cleanup call'''
 #cleanup('http://localhost', 'admin', 'admin')
@@ -115,7 +114,7 @@ AE.set_apn("testAppName")
 AE.set_or("http://ontology/ref")
 AE.set_rr(True)
 payload = AE.to_JSON()
-create("coap://10.195.131.10:5683/ODL-oneM2M-Cse", 2, "AE10", payload)
+create("coap://localhost:5683/ODL-oneM2M-Cse", 2, "AE10", payload)
 
 
 '''Container Creation'''
@@ -142,7 +141,7 @@ create("coap://10.195.131.10:5683/ODL-oneM2M-Cse", 2, "AE10", payload)
 
 
 '''Get'''
-retrieve("http://10.195.131.10:8282/ODL-oneM2M-Cse?fu=1")
+# retrieve("http://10.195.131.10:8282/ODL-oneM2M-Cse?fu=1")
 
 
 '''Delete'''
