@@ -4,7 +4,7 @@
 # parser.add_argument(["-o", "--op"])
 
 import argparse
-import test
+import iotdm_api
 #
 # parser = argparse.ArgumentParser(description='Process some integers.')
 # parser.add_argument('integers', metavar='N', type=int, nargs='+',
@@ -34,31 +34,31 @@ def __main__():
     url = '%s://%s' %(args.protocol, args.host)
 
     if args.operation == 'restconf':
-        test.restConf(url, args.name, 'admin', 'admin')
+        iotdm_api.restConf(url, args.name, 'admin', 'admin')
 
 
     if args.operation == 'kill':
-        test.cleanup(url, 'admin', 'admin')
+        iotdm_api.cleanup(url, 'admin', 'admin')
 
 
     if args.operation == 'create':
         url = url + ':%s/%s' %(args.port, args.path)
-        test.create(url, args.ty, args.name, args.payload)
+        iotdm_api.create(url, args.ty, args.name, args.payload)
 
 
     if args.operation == 'retrieve':
         url = url + ':%s/%s' %(args.port, args.path)
-        test.retrieve(url)
+        iotdm_api.retrieve(url)
 
 
     if args.operation == 'update':
         url = url + ':%s/%s' %(args.port, args.path)
-        test.update(url, args.ty, args.payload)
+        iotdm_api.update(url, args.ty, args.payload)
 
 
     if args.operation == 'delete':
         url = url + ':%s/%s' %(args.port, args.path)
-        test.delete(url)
+        iotdm_api.delete(url)
 
 if __name__ == '__main__':
     __main__()
