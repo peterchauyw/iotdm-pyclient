@@ -8,15 +8,6 @@ class http:
         }
 
 
-
-
-
-
-
-
-
-
-
 class coap:
     COAP_PORT = 5683
     """The IANA-assigned standard port for COAP services."""

@@ -2,30 +2,28 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Mon Feb  1 17:28:45 2016 by generateDS.py version 2.18a.
+# Generated Tue Jul 12 23:08:27 2016 by generateDS.py version 2.18a.
 #
 # Command line options:
-#   ('-o', 'contentinstance.py')
+#   ('-o', 'remotecse.py')
 #
 # Command line arguments:
-#   shortName-XSD-v2_3_0/CDT-contentInstance-v2_3_0.xsd
+#   shortName-XSD-v2_3_0/CDT-remoteCSE-v2_3_0.xsd
 #
 # Command line:
-#   generateDS.py -o "contentinstance.py" shortName-XSD-v2_3_0/CDT-contentInstance-v2_3_0.xsd
+#   /Library/Frameworks/Python.framework/Versions/2.7/bin/generateDS.py -o "remotecse.py" shortName-XSD-v2_3_0/CDT-remoteCSE-v2_3_0.xsd
 #
 # Current working directory (os.getcwd()):
 #   generateDS-2.18a0
 #
 
 import sys
-import json
 import re as re_
 import base64
 import datetime as datetime_
 import warnings as warnings_
 from lxml import etree as etree_
 from onem2m_xml_protocols.common import announceableResource
-
 
 
 Validate_simpletypes_ = True
@@ -618,59 +616,127 @@ def _cast(typ, value):
 #
 
 
-class cin(announceableResource):
+class csr(announceableResource):
     subclass = None
     superclass = None
-    def __init__(self, st=None, cr=None, cnf=None, cs=None, or_=None, con=None):
+    def __init__(self, cst=None, poa=None, cb=None, csi=None, mei=None, tri=None, rr=None, nl=None, ch=None, cnt=None, grp=None, acp=None, sub=None, pch=None, sch=None):
         self.original_tagname_ = None
-        self.st = st
-        self.cr = cr
-        self.cnf = cnf
-        self.cs = cs
-        self.or_ = or_
-        self.con = con
+        self.cst = cst
+        self.poa = poa
+        self.cb = cb
+        self.csi = csi
+        self.mei = mei
+        self.tri = tri
+        self.rr = rr
+        self.nl = nl
+        # if ch is None:
+        #     self.ch = []
+        # else:
+        #     self.ch = ch
+        # if cnt is None:
+        #     self.cnt = []
+        # else:
+        #     self.cnt = cnt
+        # if grp is None:
+        #     self.grp = []
+        # else:
+        #     self.grp = grp
+        # if acp is None:
+        #     self.acp = []
+        # else:
+        #     self.acp = acp
+        # if sub is None:
+        #     self.sub = []
+        # else:
+        #     self.sub = sub
+        # if pch is None:
+        #     self.pch = []
+        # else:
+        #     self.pch = pch
+        # if sch is None:
+        #     self.sch = []
+        # else:
+        #     self.sch = sch
+
     def factory(*args_, **kwargs_):
-        if cin.subclass:
-            return cin.subclass(*args_, **kwargs_)
+        if csr.subclass:
+            return csr.subclass(*args_, **kwargs_)
         else:
-            return cin(*args_, **kwargs_)
+            return csr(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_st(self): return self.st
-    def set_st(self, st): self.st = st
-    def get_cr(self): return self.cr
-    def set_cr(self, cr): self.cr = cr
-    def get_cnf(self): return self.cnf
-    def set_cnf(self, cnf): self.cnf = cnf
-    def get_cs(self): return self.cs
-    def set_cs(self, cs): self.cs = cs
-    def get_or(self): return self.or_
-    def set_or(self, or_): setattr(self, "or", or_)
-    def get_con(self): return self.con
-    def set_con(self, con): self.con = con
+    def get_cst(self): return self.cst
+    def set_cst(self, cst): self.cst = cst
+    def get_poa(self): return self.poa
+    def set_poa(self, poa): self.poa = poa
+    def get_cb(self): return self.cb
+    def set_cb(self, cb): self.cb = cb
+    def get_csi(self): return self.csi
+    def set_csi(self, csi): self.csi = csi
+    def get_mei(self): return self.mei
+    def set_mei(self, mei): self.mei = mei
+    def get_tri(self): return self.tri
+    def set_tri(self, tri): self.tri = tri
+    def get_rr(self): return self.rr
+    def set_rr(self, rr): self.rr = rr
+    def get_nl(self): return self.nl
+    def set_nl(self, nl): self.nl = nl
+    def get_ch(self): return self.ch
+    def set_ch(self, ch): self.ch = ch
+    def add_ch(self, value): self.ch.append(value)
+    def insert_ch_at(self, index, value): self.ch.insert(index, value)
+    def replace_ch_at(self, index, value): self.ch[index] = value
+    def get_cnt(self): return self.cnt
+    def set_cnt(self, cnt): self.cnt = cnt
+    def add_cnt(self, value): self.cnt.append(value)
+    def insert_cnt_at(self, index, value): self.cnt.insert(index, value)
+    def replace_cnt_at(self, index, value): self.cnt[index] = value
+    def get_grp(self): return self.grp
+    def set_grp(self, grp): self.grp = grp
+    def add_grp(self, value): self.grp.append(value)
+    def insert_grp_at(self, index, value): self.grp.insert(index, value)
+    def replace_grp_at(self, index, value): self.grp[index] = value
+    def get_acp(self): return self.acp
+    def set_acp(self, acp): self.acp = acp
+    def add_acp(self, value): self.acp.append(value)
+    def insert_acp_at(self, index, value): self.acp.insert(index, value)
+    def replace_acp_at(self, index, value): self.acp[index] = value
+    def get_sub(self): return self.sub
+    def set_sub(self, sub): self.sub = sub
+    def add_sub(self, value): self.sub.append(value)
+    def insert_sub_at(self, index, value): self.sub.insert(index, value)
+    def replace_sub_at(self, index, value): self.sub[index] = value
+    def get_pch(self): return self.pch
+    def set_pch(self, pch): self.pch = pch
+    def add_pch(self, value): self.pch.append(value)
+    def insert_pch_at(self, index, value): self.pch.insert(index, value)
+    def replace_pch_at(self, index, value): self.pch[index] = value
+    def get_sch(self): return self.sch
+    def set_sch(self, sch): self.sch = sch
+    def add_sch(self, value): self.sch.append(value)
+    def insert_sch_at(self, index, value): self.sch.insert(index, value)
+    def replace_sch_at(self, index, value): self.sch[index] = value
     def hasContent_(self):
         if (
-            self.st is not None or
-            self.cr is not None or
-            self.cnf is not None or
-            self.cs is not None or
-            self.or_ is not None or
-            self.con is not None
+            self.cst is not None or
+            self.poa is not None or
+            self.cb is not None or
+            self.csi is not None or
+            self.mei is not None or
+            self.tri is not None or
+            self.rr is not None or
+            self.nl is not None or
+            self.ch or
+            self.cnt or
+            self.grp or
+            self.acp or
+            self.sub or
+            self.pch or
+            self.sch
         ):
             return True
         else:
             return False
-
-
-
-    def to_JSON(self):
-        self.payload = {"m2m:cin":{k: v for k, v in self.__dict__.iteritems() if v is not None}}
-        return json.dumps(self, default=lambda o: o.payload,
-            sort_keys=True, indent=4)
-
-
-
-
-    def export(self, outfile, level, namespace_='m2m:', name_='cin', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
+    def export(self, outfile, level, namespace_='m2m:', name_='csr', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -680,39 +746,66 @@ class cin(announceableResource):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='cin')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='csr')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='cin', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='csr', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='cin'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='csr'):
         pass
-    def exportChildren(self, outfile, level, namespace_='m2m:', name_='cin', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='m2m:', name_='csr', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.st is not None:
+        if self.cst is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%sst>%s</%sst>%s' % (namespace_, self.gds_format_integer(self.st, input_name='st'), namespace_, eol_))
-        if self.cr is not None:
+            outfile.write('<%scst>%s</%scst>%s' % (namespace_, self.gds_format_string(quote_xml(self.cst).encode(ExternalEncoding), input_name='cst'), namespace_, eol_))
+        if self.poa is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%scr>%s</%scr>%s' % (namespace_, self.gds_format_string(quote_xml(self.cr).encode(ExternalEncoding), input_name='cr'), namespace_, eol_))
-        if self.cnf is not None:
+            outfile.write('<%spoa>%s</%spoa>%s' % (namespace_, self.gds_format_string(quote_xml(self.poa).encode(ExternalEncoding), input_name='poa'), namespace_, eol_))
+        if self.cb is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%scnf>%s</%scnf>%s' % (namespace_, self.gds_format_string(quote_xml(self.cnf).encode(ExternalEncoding), input_name='cnf'), namespace_, eol_))
-        if self.cs is not None:
+            outfile.write('<%scb>%s</%scb>%s' % (namespace_, self.gds_format_string(quote_xml(self.cb).encode(ExternalEncoding), input_name='cb'), namespace_, eol_))
+        if self.csi is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%scs>%s</%scs>%s' % (namespace_, self.gds_format_integer(self.cs, input_name='cs'), namespace_, eol_))
-        if self.or_ is not None:
+            outfile.write('<%scsi>%s</%scsi>%s' % (namespace_, self.gds_format_string(quote_xml(self.csi).encode(ExternalEncoding), input_name='csi'), namespace_, eol_))
+        if self.mei is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%sor>%s</%sor>%s' % (namespace_, self.gds_format_string(quote_xml(self.or_).encode(ExternalEncoding), input_name='or'), namespace_, eol_))
-        if self.con is not None:
+            outfile.write('<%smei>%s</%smei>%s' % (namespace_, self.gds_format_string(quote_xml(self.mei).encode(ExternalEncoding), input_name='mei'), namespace_, eol_))
+        if self.tri is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%scon>%s</%scon>%s' % (namespace_, self.gds_format_string(quote_xml(self.con).encode(ExternalEncoding), input_name='con'), namespace_, eol_))
+            outfile.write('<%stri>%s</%stri>%s' % (namespace_, self.gds_format_string(quote_xml(self.tri).encode(ExternalEncoding), input_name='tri'), namespace_, eol_))
+        if self.rr is not None:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%srr>%s</%srr>%s' % (namespace_, self.gds_format_boolean(self.rr, input_name='rr'), namespace_, eol_))
+        if self.nl is not None:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%snl>%s</%snl>%s' % (namespace_, self.gds_format_string(quote_xml(self.nl).encode(ExternalEncoding), input_name='nl'), namespace_, eol_))
+        for ch_ in self.ch:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sch>%s</%sch>%s' % (namespace_, self.gds_format_string(quote_xml(ch_).encode(ExternalEncoding), input_name='ch'), namespace_, eol_))
+        for cnt_ in self.cnt:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%scnt>%s</%scnt>%s' % (namespace_, self.gds_format_string(quote_xml(cnt_).encode(ExternalEncoding), input_name='cnt'), namespace_, eol_))
+        for grp_ in self.grp:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sgrp>%s</%sgrp>%s' % (namespace_, self.gds_format_string(quote_xml(grp_).encode(ExternalEncoding), input_name='grp'), namespace_, eol_))
+        for acp_ in self.acp:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sacp>%s</%sacp>%s' % (namespace_, self.gds_format_string(quote_xml(acp_).encode(ExternalEncoding), input_name='acp'), namespace_, eol_))
+        for sub_ in self.sub:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%ssub>%s</%ssub>%s' % (namespace_, self.gds_format_string(quote_xml(sub_).encode(ExternalEncoding), input_name='sub'), namespace_, eol_))
+        for pch_ in self.pch:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%spch>%s</%spch>%s' % (namespace_, self.gds_format_string(quote_xml(pch_).encode(ExternalEncoding), input_name='pch'), namespace_, eol_))
+        for sch_ in self.sch:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%ssch>%s</%ssch>%s' % (namespace_, self.gds_format_string(quote_xml(sch_).encode(ExternalEncoding), input_name='sch'), namespace_, eol_))
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -723,84 +816,238 @@ class cin(announceableResource):
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'st':
+        if nodeName_ == 'cst':
+            cst_ = child_.text
+            cst_ = self.gds_validate_string(cst_, node, 'cst')
+            self.cst = cst_
+        elif nodeName_ == 'poa':
+            poa_ = child_.text
+            poa_ = self.gds_validate_string(poa_, node, 'poa')
+            self.poa = poa_
+        elif nodeName_ == 'cb':
+            cb_ = child_.text
+            cb_ = self.gds_validate_string(cb_, node, 'cb')
+            self.cb = cb_
+        elif nodeName_ == 'csi':
+            csi_ = child_.text
+            csi_ = self.gds_validate_string(csi_, node, 'csi')
+            self.csi = csi_
+        elif nodeName_ == 'mei':
+            mei_ = child_.text
+            mei_ = self.gds_validate_string(mei_, node, 'mei')
+            self.mei = mei_
+        elif nodeName_ == 'tri':
+            tri_ = child_.text
+            tri_ = self.gds_validate_string(tri_, node, 'tri')
+            self.tri = tri_
+        elif nodeName_ == 'rr':
             sval_ = child_.text
-            try:
-                ival_ = int(sval_)
-            except (TypeError, ValueError) as exp:
-                raise_parse_error(child_, 'requires integer: %s' % exp)
-            if ival_ < 0:
-                raise_parse_error(child_, 'requires nonNegativeInteger')
-            ival_ = self.gds_validate_integer(ival_, node, 'st')
-            self.st = ival_
-        elif nodeName_ == 'cr':
-            cr_ = child_.text
-            cr_ = self.gds_validate_string(cr_, node, 'cr')
-            self.cr = cr_
-        elif nodeName_ == 'cnf':
-            cnf_ = child_.text
-            cnf_ = self.gds_validate_string(cnf_, node, 'cnf')
-            self.cnf = cnf_
-        elif nodeName_ == 'cs':
-            sval_ = child_.text
-            try:
-                ival_ = int(sval_)
-            except (TypeError, ValueError) as exp:
-                raise_parse_error(child_, 'requires integer: %s' % exp)
-            if ival_ < 0:
-                raise_parse_error(child_, 'requires nonNegativeInteger')
-            ival_ = self.gds_validate_integer(ival_, node, 'cs')
-            self.cs = ival_
-        elif nodeName_ == 'or':
-            or_ = child_.text
-            or_ = self.gds_validate_string(or_, node, 'or')
-            self.or_ = or_
-        elif nodeName_ == 'con':
-            con_ = child_.text
-            con_ = self.gds_validate_string(con_, node, 'con')
-            self.con = con_
-        super(cin, self).buildChildren(child_, node, nodeName_, True)
-# end class cin
+            if sval_ in ('true', '1'):
+                ival_ = True
+            elif sval_ in ('false', '0'):
+                ival_ = False
+            else:
+                raise_parse_error(child_, 'requires boolean')
+            ival_ = self.gds_validate_boolean(ival_, node, 'rr')
+            self.rr = ival_
+        elif nodeName_ == 'nl':
+            nl_ = child_.text
+            nl_ = self.gds_validate_string(nl_, node, 'nl')
+            self.nl = nl_
+        elif nodeName_ == 'ch':
+            ch_ = child_.text
+            ch_ = self.gds_validate_string(ch_, node, 'ch')
+            self.ch.append(ch_)
+        elif nodeName_ == 'cnt':
+            cnt_ = child_.text
+            cnt_ = self.gds_validate_string(cnt_, node, 'cnt')
+            self.cnt.append(cnt_)
+        elif nodeName_ == 'grp':
+            grp_ = child_.text
+            grp_ = self.gds_validate_string(grp_, node, 'grp')
+            self.grp.append(grp_)
+        elif nodeName_ == 'acp':
+            acp_ = child_.text
+            acp_ = self.gds_validate_string(acp_, node, 'acp')
+            self.acp.append(acp_)
+        elif nodeName_ == 'sub':
+            sub_ = child_.text
+            sub_ = self.gds_validate_string(sub_, node, 'sub')
+            self.sub.append(sub_)
+        elif nodeName_ == 'pch':
+            pch_ = child_.text
+            pch_ = self.gds_validate_string(pch_, node, 'pch')
+            self.pch.append(pch_)
+        elif nodeName_ == 'sch':
+            sch_ = child_.text
+            sch_ = self.gds_validate_string(sch_, node, 'sch')
+            self.sch.append(sch_)
+        super(csr, self).buildChildren(child_, node, nodeName_, True)
+# end class csr
 
 
-class cinA(GeneratedsSuper):
+class csrA(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, st=None, cnf=None, cs=None, or_=None, con=None):
+    def __init__(self, cst=None, poa=None, cb=None, csi=None, rr=None, nl=None, ch=None, nodA=None, cnt=None, cntA=None, grp=None, grpA=None, acp=None, acpA=None, sub=None, pch=None, schA=None, lcpA=None):
         self.original_tagname_ = None
-        self.st = st
-        self.cnf = cnf
-        self.cs = cs
-        self.or_ = or_
-        self.con = con
-    def factory(*args_, **kwargs_):
-        if cinA.subclass:
-            return cinA.subclass(*args_, **kwargs_)
+        self.cst = cst
+        self.poa = poa
+        self.cb = cb
+        self.csi = csi
+        self.rr = rr
+        self.nl = nl
+        if ch is None:
+            self.ch = []
         else:
-            return cinA(*args_, **kwargs_)
+            self.ch = ch
+        if nodA is None:
+            self.nodA = []
+        else:
+            self.nodA = nodA
+        if cnt is None:
+            self.cnt = []
+        else:
+            self.cnt = cnt
+        if cntA is None:
+            self.cntA = []
+        else:
+            self.cntA = cntA
+        if grp is None:
+            self.grp = []
+        else:
+            self.grp = grp
+        if grpA is None:
+            self.grpA = []
+        else:
+            self.grpA = grpA
+        if acp is None:
+            self.acp = []
+        else:
+            self.acp = acp
+        if acpA is None:
+            self.acpA = []
+        else:
+            self.acpA = acpA
+        if sub is None:
+            self.sub = []
+        else:
+            self.sub = sub
+        if pch is None:
+            self.pch = []
+        else:
+            self.pch = pch
+        if schA is None:
+            self.schA = []
+        else:
+            self.schA = schA
+        if lcpA is None:
+            self.lcpA = []
+        else:
+            self.lcpA = lcpA
+    def factory(*args_, **kwargs_):
+        if csrA.subclass:
+            return csrA.subclass(*args_, **kwargs_)
+        else:
+            return csrA(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_st(self): return self.st
-    def set_st(self, st): self.st = st
-    def get_cnf(self): return self.cnf
-    def set_cnf(self, cnf): self.cnf = cnf
-    def get_cs(self): return self.cs
-    def set_cs(self, cs): self.cs = cs
-    def get_or(self): return self.or_
-    def set_or(self, or_): self.or_ = or_
-    def get_con(self): return self.con
-    def set_con(self, con): self.con = con
+    def get_cst(self): return self.cst
+    def set_cst(self, cst): self.cst = cst
+    def get_poa(self): return self.poa
+    def set_poa(self, poa): self.poa = poa
+    def get_cb(self): return self.cb
+    def set_cb(self, cb): self.cb = cb
+    def get_csi(self): return self.csi
+    def set_csi(self, csi): self.csi = csi
+    def get_rr(self): return self.rr
+    def set_rr(self, rr): self.rr = rr
+    def get_nl(self): return self.nl
+    def set_nl(self, nl): self.nl = nl
+    def get_ch(self): return self.ch
+    def set_ch(self, ch): self.ch = ch
+    def add_ch(self, value): self.ch.append(value)
+    def insert_ch_at(self, index, value): self.ch.insert(index, value)
+    def replace_ch_at(self, index, value): self.ch[index] = value
+    def get_nodA(self): return self.nodA
+    def set_nodA(self, nodA): self.nodA = nodA
+    def add_nodA(self, value): self.nodA.append(value)
+    def insert_nodA_at(self, index, value): self.nodA.insert(index, value)
+    def replace_nodA_at(self, index, value): self.nodA[index] = value
+    def get_cnt(self): return self.cnt
+    def set_cnt(self, cnt): self.cnt = cnt
+    def add_cnt(self, value): self.cnt.append(value)
+    def insert_cnt_at(self, index, value): self.cnt.insert(index, value)
+    def replace_cnt_at(self, index, value): self.cnt[index] = value
+    def get_cntA(self): return self.cntA
+    def set_cntA(self, cntA): self.cntA = cntA
+    def add_cntA(self, value): self.cntA.append(value)
+    def insert_cntA_at(self, index, value): self.cntA.insert(index, value)
+    def replace_cntA_at(self, index, value): self.cntA[index] = value
+    def get_grp(self): return self.grp
+    def set_grp(self, grp): self.grp = grp
+    def add_grp(self, value): self.grp.append(value)
+    def insert_grp_at(self, index, value): self.grp.insert(index, value)
+    def replace_grp_at(self, index, value): self.grp[index] = value
+    def get_grpA(self): return self.grpA
+    def set_grpA(self, grpA): self.grpA = grpA
+    def add_grpA(self, value): self.grpA.append(value)
+    def insert_grpA_at(self, index, value): self.grpA.insert(index, value)
+    def replace_grpA_at(self, index, value): self.grpA[index] = value
+    def get_acp(self): return self.acp
+    def set_acp(self, acp): self.acp = acp
+    def add_acp(self, value): self.acp.append(value)
+    def insert_acp_at(self, index, value): self.acp.insert(index, value)
+    def replace_acp_at(self, index, value): self.acp[index] = value
+    def get_acpA(self): return self.acpA
+    def set_acpA(self, acpA): self.acpA = acpA
+    def add_acpA(self, value): self.acpA.append(value)
+    def insert_acpA_at(self, index, value): self.acpA.insert(index, value)
+    def replace_acpA_at(self, index, value): self.acpA[index] = value
+    def get_sub(self): return self.sub
+    def set_sub(self, sub): self.sub = sub
+    def add_sub(self, value): self.sub.append(value)
+    def insert_sub_at(self, index, value): self.sub.insert(index, value)
+    def replace_sub_at(self, index, value): self.sub[index] = value
+    def get_pch(self): return self.pch
+    def set_pch(self, pch): self.pch = pch
+    def add_pch(self, value): self.pch.append(value)
+    def insert_pch_at(self, index, value): self.pch.insert(index, value)
+    def replace_pch_at(self, index, value): self.pch[index] = value
+    def get_schA(self): return self.schA
+    def set_schA(self, schA): self.schA = schA
+    def add_schA(self, value): self.schA.append(value)
+    def insert_schA_at(self, index, value): self.schA.insert(index, value)
+    def replace_schA_at(self, index, value): self.schA[index] = value
+    def get_lcpA(self): return self.lcpA
+    def set_lcpA(self, lcpA): self.lcpA = lcpA
+    def add_lcpA(self, value): self.lcpA.append(value)
+    def insert_lcpA_at(self, index, value): self.lcpA.insert(index, value)
+    def replace_lcpA_at(self, index, value): self.lcpA[index] = value
     def hasContent_(self):
         if (
-            self.st is not None or
-            self.cnf is not None or
-            self.cs is not None or
-            self.or_ is not None or
-            self.con is not None
+            self.cst is not None or
+            self.poa is not None or
+            self.cb is not None or
+            self.csi is not None or
+            self.rr is not None or
+            self.nl is not None or
+            self.ch or
+            self.nodA or
+            self.cnt or
+            self.cntA or
+            self.grp or
+            self.grpA or
+            self.acp or
+            self.acpA or
+            self.sub or
+            self.pch or
+            self.schA or
+            self.lcpA
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='m2m:', name_='cinA', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
+    def export(self, outfile, level, namespace_='m2m:', name_='csrA', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -810,36 +1057,75 @@ class cinA(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='cinA')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='csrA')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='cinA', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='csrA', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='cinA'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='csrA'):
         pass
-    def exportChildren(self, outfile, level, namespace_='m2m:', name_='cinA', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='m2m:', name_='csrA', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.st is not None:
+        if self.cst is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%sst>%s</%sst>%s' % (namespace_, self.gds_format_integer(self.st, input_name='st'), namespace_, eol_))
-        if self.cnf is not None:
+            outfile.write('<%scst>%s</%scst>%s' % (namespace_, self.gds_format_string(quote_xml(self.cst).encode(ExternalEncoding), input_name='cst'), namespace_, eol_))
+        if self.poa is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%scnf>%s</%scnf>%s' % (namespace_, self.gds_format_string(quote_xml(self.cnf).encode(ExternalEncoding), input_name='cnf'), namespace_, eol_))
-        if self.cs is not None:
+            outfile.write('<%spoa>%s</%spoa>%s' % (namespace_, self.gds_format_string(quote_xml(self.poa).encode(ExternalEncoding), input_name='poa'), namespace_, eol_))
+        if self.cb is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%scs>%s</%scs>%s' % (namespace_, self.gds_format_integer(self.cs, input_name='cs'), namespace_, eol_))
-        if self.or_ is not None:
+            outfile.write('<%scb>%s</%scb>%s' % (namespace_, self.gds_format_string(quote_xml(self.cb).encode(ExternalEncoding), input_name='cb'), namespace_, eol_))
+        if self.csi is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%sor>%s</%sor>%s' % (namespace_, self.gds_format_string(quote_xml(self.or_).encode(ExternalEncoding), input_name='or'), namespace_, eol_))
-        if self.con is not None:
+            outfile.write('<%scsi>%s</%scsi>%s' % (namespace_, self.gds_format_string(quote_xml(self.csi).encode(ExternalEncoding), input_name='csi'), namespace_, eol_))
+        if self.rr is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%scon>%s</%scon>%s' % (namespace_, self.gds_format_string(quote_xml(self.con).encode(ExternalEncoding), input_name='con'), namespace_, eol_))
+            outfile.write('<%srr>%s</%srr>%s' % (namespace_, self.gds_format_boolean(self.rr, input_name='rr'), namespace_, eol_))
+        if self.nl is not None:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%snl>%s</%snl>%s' % (namespace_, self.gds_format_string(quote_xml(self.nl).encode(ExternalEncoding), input_name='nl'), namespace_, eol_))
+        for ch_ in self.ch:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sch>%s</%sch>%s' % (namespace_, self.gds_format_string(quote_xml(ch_).encode(ExternalEncoding), input_name='ch'), namespace_, eol_))
+        for nodA_ in self.nodA:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%snodA>%s</%snodA>%s' % (namespace_, self.gds_format_string(quote_xml(nodA_).encode(ExternalEncoding), input_name='nodA'), namespace_, eol_))
+        for cnt_ in self.cnt:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%scnt>%s</%scnt>%s' % (namespace_, self.gds_format_string(quote_xml(cnt_).encode(ExternalEncoding), input_name='cnt'), namespace_, eol_))
+        for cntA_ in self.cntA:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%scntA>%s</%scntA>%s' % (namespace_, self.gds_format_string(quote_xml(cntA_).encode(ExternalEncoding), input_name='cntA'), namespace_, eol_))
+        for grp_ in self.grp:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sgrp>%s</%sgrp>%s' % (namespace_, self.gds_format_string(quote_xml(grp_).encode(ExternalEncoding), input_name='grp'), namespace_, eol_))
+        for grpA_ in self.grpA:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sgrpA>%s</%sgrpA>%s' % (namespace_, self.gds_format_string(quote_xml(grpA_).encode(ExternalEncoding), input_name='grpA'), namespace_, eol_))
+        for acp_ in self.acp:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sacp>%s</%sacp>%s' % (namespace_, self.gds_format_string(quote_xml(acp_).encode(ExternalEncoding), input_name='acp'), namespace_, eol_))
+        for acpA_ in self.acpA:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sacpA>%s</%sacpA>%s' % (namespace_, self.gds_format_string(quote_xml(acpA_).encode(ExternalEncoding), input_name='acpA'), namespace_, eol_))
+        for sub_ in self.sub:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%ssub>%s</%ssub>%s' % (namespace_, self.gds_format_string(quote_xml(sub_).encode(ExternalEncoding), input_name='sub'), namespace_, eol_))
+        for pch_ in self.pch:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%spch>%s</%spch>%s' % (namespace_, self.gds_format_string(quote_xml(pch_).encode(ExternalEncoding), input_name='pch'), namespace_, eol_))
+        for schA_ in self.schA:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sschA>%s</%sschA>%s' % (namespace_, self.gds_format_string(quote_xml(schA_).encode(ExternalEncoding), input_name='schA'), namespace_, eol_))
+        for lcpA_ in self.lcpA:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%slcpA>%s</%slcpA>%s' % (namespace_, self.gds_format_string(quote_xml(lcpA_).encode(ExternalEncoding), input_name='lcpA'), namespace_, eol_))
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -850,40 +1136,86 @@ class cinA(GeneratedsSuper):
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'st':
+        if nodeName_ == 'cst':
+            cst_ = child_.text
+            cst_ = self.gds_validate_string(cst_, node, 'cst')
+            self.cst = cst_
+        elif nodeName_ == 'poa':
+            poa_ = child_.text
+            poa_ = self.gds_validate_string(poa_, node, 'poa')
+            self.poa = poa_
+        elif nodeName_ == 'cb':
+            cb_ = child_.text
+            cb_ = self.gds_validate_string(cb_, node, 'cb')
+            self.cb = cb_
+        elif nodeName_ == 'csi':
+            csi_ = child_.text
+            csi_ = self.gds_validate_string(csi_, node, 'csi')
+            self.csi = csi_
+        elif nodeName_ == 'rr':
             sval_ = child_.text
-            try:
-                ival_ = int(sval_)
-            except (TypeError, ValueError) as exp:
-                raise_parse_error(child_, 'requires integer: %s' % exp)
-            if ival_ < 0:
-                raise_parse_error(child_, 'requires nonNegativeInteger')
-            ival_ = self.gds_validate_integer(ival_, node, 'st')
-            self.st = ival_
-        elif nodeName_ == 'cnf':
-            cnf_ = child_.text
-            cnf_ = self.gds_validate_string(cnf_, node, 'cnf')
-            self.cnf = cnf_
-        elif nodeName_ == 'cs':
-            sval_ = child_.text
-            try:
-                ival_ = int(sval_)
-            except (TypeError, ValueError) as exp:
-                raise_parse_error(child_, 'requires integer: %s' % exp)
-            if ival_ < 0:
-                raise_parse_error(child_, 'requires nonNegativeInteger')
-            ival_ = self.gds_validate_integer(ival_, node, 'cs')
-            self.cs = ival_
-        elif nodeName_ == 'or':
-            or_ = child_.text
-            or_ = self.gds_validate_string(or_, node, 'or')
-            self.or_ = or_
-        elif nodeName_ == 'con':
-            con_ = child_.text
-            con_ = self.gds_validate_string(con_, node, 'con')
-            self.con = con_
-        super(cinA, self).buildChildren(child_, node, nodeName_, True)
-# end class cinA
+            if sval_ in ('true', '1'):
+                ival_ = True
+            elif sval_ in ('false', '0'):
+                ival_ = False
+            else:
+                raise_parse_error(child_, 'requires boolean')
+            ival_ = self.gds_validate_boolean(ival_, node, 'rr')
+            self.rr = ival_
+        elif nodeName_ == 'nl':
+            nl_ = child_.text
+            nl_ = self.gds_validate_string(nl_, node, 'nl')
+            self.nl = nl_
+        elif nodeName_ == 'ch':
+            ch_ = child_.text
+            ch_ = self.gds_validate_string(ch_, node, 'ch')
+            self.ch.append(ch_)
+        elif nodeName_ == 'nodA':
+            nodA_ = child_.text
+            nodA_ = self.gds_validate_string(nodA_, node, 'nodA')
+            self.nodA.append(nodA_)
+        elif nodeName_ == 'cnt':
+            cnt_ = child_.text
+            cnt_ = self.gds_validate_string(cnt_, node, 'cnt')
+            self.cnt.append(cnt_)
+        elif nodeName_ == 'cntA':
+            cntA_ = child_.text
+            cntA_ = self.gds_validate_string(cntA_, node, 'cntA')
+            self.cntA.append(cntA_)
+        elif nodeName_ == 'grp':
+            grp_ = child_.text
+            grp_ = self.gds_validate_string(grp_, node, 'grp')
+            self.grp.append(grp_)
+        elif nodeName_ == 'grpA':
+            grpA_ = child_.text
+            grpA_ = self.gds_validate_string(grpA_, node, 'grpA')
+            self.grpA.append(grpA_)
+        elif nodeName_ == 'acp':
+            acp_ = child_.text
+            acp_ = self.gds_validate_string(acp_, node, 'acp')
+            self.acp.append(acp_)
+        elif nodeName_ == 'acpA':
+            acpA_ = child_.text
+            acpA_ = self.gds_validate_string(acpA_, node, 'acpA')
+            self.acpA.append(acpA_)
+        elif nodeName_ == 'sub':
+            sub_ = child_.text
+            sub_ = self.gds_validate_string(sub_, node, 'sub')
+            self.sub.append(sub_)
+        elif nodeName_ == 'pch':
+            pch_ = child_.text
+            pch_ = self.gds_validate_string(pch_, node, 'pch')
+            self.pch.append(pch_)
+        elif nodeName_ == 'schA':
+            schA_ = child_.text
+            schA_ = self.gds_validate_string(schA_, node, 'schA')
+            self.schA.append(schA_)
+        elif nodeName_ == 'lcpA':
+            lcpA_ = child_.text
+            lcpA_ = self.gds_validate_string(lcpA_, node, 'lcpA')
+            self.lcpA.append(lcpA_)
+        super(csrA, self).buildChildren(child_, node, nodeName_, True)
+# end class csrA
 
 
 GDSClassesMapping = {
@@ -914,8 +1246,8 @@ def parse(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'cin'
-        rootClass = cin
+        rootTag = 'csr'
+        rootClass = csr
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -935,8 +1267,8 @@ def parseEtree(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'cin'
-        rootClass = cin
+        rootTag = 'csr'
+        rootClass = csr
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -960,8 +1292,8 @@ def parseString(inString, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'cin'
-        rootClass = cin
+        rootTag = 'csr'
+        rootClass = csr
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -980,15 +1312,15 @@ def parseLiteral(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'cin'
-        rootClass = cin
+        rootTag = 'csr'
+        rootClass = csr
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
     doc = None
     if not silence:
-        sys.stdout.write('#from contentinstance import *\n\n')
-        sys.stdout.write('import contentinstance as model_\n\n')
+        sys.stdout.write('#from remotecse import *\n\n')
+        sys.stdout.write('import remotecse as model_\n\n')
         sys.stdout.write('rootObj = model_.rootClass(\n')
         rootObj.exportLiteral(sys.stdout, 0, name_=rootTag)
         sys.stdout.write(')\n')
@@ -1009,6 +1341,6 @@ if __name__ == '__main__':
 
 
 __all__ = [
-    "cin",
-    "cinA"
+    "csr",
+    "csrA"
 ]

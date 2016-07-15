@@ -33,16 +33,17 @@ class Agent():
     should be sent as several blocks.
     """
 
-    def __init__(self, protocol, op, uri, payload=None, ty=None, nm=None):
+    def __init__(self, protocol, op, uri, payload=None, ty=None, origin=None, requestID=None):
         self.protocol = protocol
         self.ty = ty
-        self.nm = nm
         self.uri = urlparse(uri)
         tmp = self.uri.netloc.split(':')
         self.host = socket.gethostbyname(tmp[0])
         self.path = self.uri.path.strip("/")
         self.query = self.uri.query
         self.payload = payload
+        self.origin = origin
+        self.requestID = requestID
         if op == "post":
             reactor.callLater(0, self.postResource)
         elif op == "get":
@@ -63,9 +64,14 @@ class Agent():
         request.opt.uri_query = ("ty="+str(self.ty),)
         request.opt.uri_path = (self.path,)
         request.opt.content_format = coap.media_types_rev['application/json']
-        request.opt.oneM2M_FR = ("127.0.0.1",)
-        request.opt.oneM2M_RQI = ("12345",)
-        request.opt.oneM2M_NM = (self.nm,)
+        if self.origin is not None:
+            request.opt.oneM2M_FR = (self.origin,)
+        else:
+            request.opt.oneM2M_FR = ("//localhost:10000",)
+        if self.requestID is not None:
+            request.opt.oneM2M_RQI = (self.requestID,)
+        else:
+            request.opt.oneM2M_RQI = ("12345",)
         request.opt.oneM2M_TY = self.ty
         request.remote = (self.host, coap.COAP_PORT)
         d = self.protocol.request(request)
@@ -78,8 +84,14 @@ class Agent():
         request = coap.Message(code=coap.GET)
         request.opt.uri_path = (self.path,)
         request.opt.uri_query = (self.query,)
-        request.opt.oneM2M_FR = ("127.0.0.1",)
-        request.opt.oneM2M_RQI = ("12345",)
+        if self.origin is not None:
+            request.opt.oneM2M_FR = (self.origin,)
+        else:
+            request.opt.oneM2M_FR = ("//localhost:10000",)
+        if self.requestID is not None:
+            request.opt.oneM2M_RQI = (self.requestID,)
+        else:
+            request.opt.oneM2M_RQI = ("12345",)
         request.opt.observe = 0
         request.remote = (self.host, coap.COAP_PORT)
         d = self.protocol.request(request)
@@ -94,8 +106,14 @@ class Agent():
         request.opt.uri_port = int(self.uri.port)
         request.opt.uri_path = (self.path,)
         request.opt.content_format = coap.media_types_rev['application/json']
-        request.opt.oneM2M_FR = ("127.0.0.1",)
-        request.opt.oneM2M_RQI = ("12345",)
+        if self.origin is not None:
+            request.opt.oneM2M_FR = (self.origin,)
+        else:
+            request.opt.oneM2M_FR = ("//localhost:10000",)
+        if self.requestID is not None:
+            request.opt.oneM2M_RQI = (self.requestID,)
+        else:
+            request.opt.oneM2M_RQI = ("12345",)
         request.remote = (self.host, coap.COAP_PORT)
         d = self.protocol.request(request)
         d.addCallback(self.printResponse)
@@ -106,8 +124,14 @@ class Agent():
 
         request = coap.Message(code=coap.DELETE)
         request.opt.uri_path = (self.path,)
-        request.opt.oneM2M_FR = ("127.0.0.1",)
-        request.opt.oneM2M_RQI = ("12345",)
+        if self.origin is not None:
+            request.opt.oneM2M_FR = (self.origin,)
+        else:
+            request.opt.oneM2M_FR = ("//localhost:10000",)
+        if self.requestID is not None:
+            request.opt.oneM2M_RQI = (self.requestID,)
+        else:
+            request.opt.oneM2M_RQI = ("12345",)
         request.opt.observe = 0
         request.remote = (self.host, coap.COAP_PORT)
         d = self.protocol.request(request)

@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Mon Feb  1 17:28:45 2016 by generateDS.py version 2.18a.
+# Generated Thu Jul 14 16:57:26 2016 by generateDS.py version 2.18a.
 #
 # Command line options:
-#   ('-o', 'contentinstance.py')
+#   ('-o', 'acp.py')
 #
 # Command line arguments:
-#   shortName-XSD-v2_3_0/CDT-contentInstance-v2_3_0.xsd
+#   shortName-XSD-v2_3_0/CDT-accessControlPolicy-v2_3_0.xsd
 #
 # Command line:
-#   generateDS.py -o "contentinstance.py" shortName-XSD-v2_3_0/CDT-contentInstance-v2_3_0.xsd
+#   generateDS.py -o "acp.py" shortName-XSD-v2_3_0/CDT-accessControlPolicy-v2_3_0.xsd
 #
 # Current working directory (os.getcwd()):
 #   generateDS-2.18a0
@@ -25,7 +25,6 @@ import datetime as datetime_
 import warnings as warnings_
 from lxml import etree as etree_
 from onem2m_xml_protocols.common import announceableResource
-
 
 
 Validate_simpletypes_ = True
@@ -618,189 +617,170 @@ def _cast(typ, value):
 #
 
 
-class cin(announceableResource):
+class acp(announceableResource):
     subclass = None
     superclass = None
-    def __init__(self, st=None, cr=None, cnf=None, cs=None, or_=None, con=None):
+    def __init__(self, pv=None, pvs=None, ch=None, sub=None):
         self.original_tagname_ = None
-        self.st = st
-        self.cr = cr
-        self.cnf = cnf
-        self.cs = cs
-        self.or_ = or_
-        self.con = con
+        self.pv = pv
+        self.pvs = pvs
+        # if ch is None:
+        #     self.ch = []
+        # else:
+        #     self.ch = ch
+        # if sub is None:
+        #     self.sub = []
+        # else:
+        #     self.sub = sub
     def factory(*args_, **kwargs_):
-        if cin.subclass:
-            return cin.subclass(*args_, **kwargs_)
+        if acp.subclass:
+            return acp.subclass(*args_, **kwargs_)
         else:
-            return cin(*args_, **kwargs_)
+            return acp(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_st(self): return self.st
-    def set_st(self, st): self.st = st
-    def get_cr(self): return self.cr
-    def set_cr(self, cr): self.cr = cr
-    def get_cnf(self): return self.cnf
-    def set_cnf(self, cnf): self.cnf = cnf
-    def get_cs(self): return self.cs
-    def set_cs(self, cs): self.cs = cs
-    def get_or(self): return self.or_
-    def set_or(self, or_): setattr(self, "or", or_)
-    def get_con(self): return self.con
-    def set_con(self, con): self.con = con
+    def get_pv(self): return self.pv
+    def set_pv(self, pv): self.pv = pv
+    def get_pvs(self): return self.pvs
+    def set_pvs(self, pvs): self.pvs = pvs
+    def get_ch(self): return self.ch
+    def set_ch(self, ch): self.ch = ch
+    def add_ch(self, value): self.ch.append(value)
+    def insert_ch_at(self, index, value): self.ch.insert(index, value)
+    def replace_ch_at(self, index, value): self.ch[index] = value
+    def get_sub(self): return self.sub
+    def set_sub(self, sub): self.sub = sub
+    def add_sub(self, value): self.sub.append(value)
+    def insert_sub_at(self, index, value): self.sub.insert(index, value)
+    def replace_sub_at(self, index, value): self.sub[index] = value
     def hasContent_(self):
         if (
-            self.st is not None or
-            self.cr is not None or
-            self.cnf is not None or
-            self.cs is not None or
-            self.or_ is not None or
-            self.con is not None
+            self.pv is not None or
+            self.pvs is not None or
+            self.ch or
+            self.sub
         ):
             return True
         else:
             return False
-
+    def export(self, outfile, level, namespace_='m2m:', name_='acp', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='acp')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='acp', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='acp'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='m2m:', name_='acp', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.pv is not None:
+            self.pv.export(outfile, level, namespace_, name_='pv', pretty_print=pretty_print)
+        if self.pvs is not None:
+            self.pvs.export(outfile, level, namespace_, name_='pvs', pretty_print=pretty_print)
+        for ch_ in self.ch:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sch>%s</%sch>%s' % (namespace_, self.gds_format_string(quote_xml(ch_).encode(ExternalEncoding), input_name='ch'), namespace_, eol_))
+        for sub_ in self.sub:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%ssub>%s</%ssub>%s' % (namespace_, self.gds_format_string(quote_xml(sub_).encode(ExternalEncoding), input_name='sub'), namespace_, eol_))
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        pass
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        if nodeName_ == 'pv':
+            obj_ = setOfAcrs.factory()
+            obj_.build(child_)
+            self.pv = obj_
+            obj_.original_tagname_ = 'pv'
+        elif nodeName_ == 'pvs':
+            obj_ = setOfAcrs.factory()
+            obj_.build(child_)
+            self.pvs = obj_
+            obj_.original_tagname_ = 'pvs'
+        elif nodeName_ == 'ch':
+            ch_ = child_.text
+            ch_ = self.gds_validate_string(ch_, node, 'ch')
+            self.ch.append(ch_)
+        elif nodeName_ == 'sub':
+            sub_ = child_.text
+            sub_ = self.gds_validate_string(sub_, node, 'sub')
+            self.sub.append(sub_)
+        super(acp, self).buildChildren(child_, node, nodeName_, True)
 
 
     def to_JSON(self):
-        self.payload = {"m2m:cin":{k: v for k, v in self.__dict__.iteritems() if v is not None}}
-        return json.dumps(self, default=lambda o: o.payload,
-            sort_keys=True, indent=4)
+        jsonstr = super(acp, self).to_JSON()
+        return jsonstr.replace(" ","").replace("\\n","").replace("\\","")
+
+# end class acp
 
 
-
-
-    def export(self, outfile, level, namespace_='m2m:', name_='cin', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='cin')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='cin', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='cin'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='m2m:', name_='cin', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.st is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sst>%s</%sst>%s' % (namespace_, self.gds_format_integer(self.st, input_name='st'), namespace_, eol_))
-        if self.cr is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%scr>%s</%scr>%s' % (namespace_, self.gds_format_string(quote_xml(self.cr).encode(ExternalEncoding), input_name='cr'), namespace_, eol_))
-        if self.cnf is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%scnf>%s</%scnf>%s' % (namespace_, self.gds_format_string(quote_xml(self.cnf).encode(ExternalEncoding), input_name='cnf'), namespace_, eol_))
-        if self.cs is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%scs>%s</%scs>%s' % (namespace_, self.gds_format_integer(self.cs, input_name='cs'), namespace_, eol_))
-        if self.or_ is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sor>%s</%sor>%s' % (namespace_, self.gds_format_string(quote_xml(self.or_).encode(ExternalEncoding), input_name='or'), namespace_, eol_))
-        if self.con is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%scon>%s</%scon>%s' % (namespace_, self.gds_format_string(quote_xml(self.con).encode(ExternalEncoding), input_name='con'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'st':
-            sval_ = child_.text
-            try:
-                ival_ = int(sval_)
-            except (TypeError, ValueError) as exp:
-                raise_parse_error(child_, 'requires integer: %s' % exp)
-            if ival_ < 0:
-                raise_parse_error(child_, 'requires nonNegativeInteger')
-            ival_ = self.gds_validate_integer(ival_, node, 'st')
-            self.st = ival_
-        elif nodeName_ == 'cr':
-            cr_ = child_.text
-            cr_ = self.gds_validate_string(cr_, node, 'cr')
-            self.cr = cr_
-        elif nodeName_ == 'cnf':
-            cnf_ = child_.text
-            cnf_ = self.gds_validate_string(cnf_, node, 'cnf')
-            self.cnf = cnf_
-        elif nodeName_ == 'cs':
-            sval_ = child_.text
-            try:
-                ival_ = int(sval_)
-            except (TypeError, ValueError) as exp:
-                raise_parse_error(child_, 'requires integer: %s' % exp)
-            if ival_ < 0:
-                raise_parse_error(child_, 'requires nonNegativeInteger')
-            ival_ = self.gds_validate_integer(ival_, node, 'cs')
-            self.cs = ival_
-        elif nodeName_ == 'or':
-            or_ = child_.text
-            or_ = self.gds_validate_string(or_, node, 'or')
-            self.or_ = or_
-        elif nodeName_ == 'con':
-            con_ = child_.text
-            con_ = self.gds_validate_string(con_, node, 'con')
-            self.con = con_
-        super(cin, self).buildChildren(child_, node, nodeName_, True)
-# end class cin
-
-
-class cinA(GeneratedsSuper):
+class acpA(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, st=None, cnf=None, cs=None, or_=None, con=None):
+    def __init__(self, pv=None, pvs=None, ch=None, sub=None):
         self.original_tagname_ = None
-        self.st = st
-        self.cnf = cnf
-        self.cs = cs
-        self.or_ = or_
-        self.con = con
-    def factory(*args_, **kwargs_):
-        if cinA.subclass:
-            return cinA.subclass(*args_, **kwargs_)
+        self.pv = pv
+        self.pvs = pvs
+        if ch is None:
+            self.ch = []
         else:
-            return cinA(*args_, **kwargs_)
+            self.ch = ch
+        if sub is None:
+            self.sub = []
+        else:
+            self.sub = sub
+    def factory(*args_, **kwargs_):
+        if acpA.subclass:
+            return acpA.subclass(*args_, **kwargs_)
+        else:
+            return acpA(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_st(self): return self.st
-    def set_st(self, st): self.st = st
-    def get_cnf(self): return self.cnf
-    def set_cnf(self, cnf): self.cnf = cnf
-    def get_cs(self): return self.cs
-    def set_cs(self, cs): self.cs = cs
-    def get_or(self): return self.or_
-    def set_or(self, or_): self.or_ = or_
-    def get_con(self): return self.con
-    def set_con(self, con): self.con = con
+    def get_pv(self): return self.pv
+    def set_pv(self, pv): self.pv = pv
+    def get_pvs(self): return self.pvs
+    def set_pvs(self, pvs): self.pvs = pvs
+    def get_ch(self): return self.ch
+    def set_ch(self, ch): self.ch = ch
+    def add_ch(self, value): self.ch.append(value)
+    def insert_ch_at(self, index, value): self.ch.insert(index, value)
+    def replace_ch_at(self, index, value): self.ch[index] = value
+    def get_sub(self): return self.sub
+    def set_sub(self, sub): self.sub = sub
+    def add_sub(self, value): self.sub.append(value)
+    def insert_sub_at(self, index, value): self.sub.insert(index, value)
+    def replace_sub_at(self, index, value): self.sub[index] = value
     def hasContent_(self):
         if (
-            self.st is not None or
-            self.cnf is not None or
-            self.cs is not None or
-            self.or_ is not None or
-            self.con is not None
+            self.pv is not None or
+            self.pvs is not None or
+            self.ch or
+            self.sub
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='m2m:', name_='cinA', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
+    def export(self, outfile, level, namespace_='m2m:', name_='acpA', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -810,36 +790,31 @@ class cinA(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='cinA')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='acpA')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='cinA', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='acpA', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='cinA'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='acpA'):
         pass
-    def exportChildren(self, outfile, level, namespace_='m2m:', name_='cinA', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='m2m:', name_='acpA', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
             eol_ = ''
-        if self.st is not None:
+        if self.pv is not None:
+            self.pv.export(outfile, level, namespace_, name_='pv', pretty_print=pretty_print)
+        if self.pvs is not None:
+            self.pvs.export(outfile, level, namespace_, name_='pvs', pretty_print=pretty_print)
+        for ch_ in self.ch:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%sst>%s</%sst>%s' % (namespace_, self.gds_format_integer(self.st, input_name='st'), namespace_, eol_))
-        if self.cnf is not None:
+            outfile.write('<%sch>%s</%sch>%s' % (namespace_, self.gds_format_string(quote_xml(ch_).encode(ExternalEncoding), input_name='ch'), namespace_, eol_))
+        for sub_ in self.sub:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%scnf>%s</%scnf>%s' % (namespace_, self.gds_format_string(quote_xml(self.cnf).encode(ExternalEncoding), input_name='cnf'), namespace_, eol_))
-        if self.cs is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%scs>%s</%scs>%s' % (namespace_, self.gds_format_integer(self.cs, input_name='cs'), namespace_, eol_))
-        if self.or_ is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sor>%s</%sor>%s' % (namespace_, self.gds_format_string(quote_xml(self.or_).encode(ExternalEncoding), input_name='or'), namespace_, eol_))
-        if self.con is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%scon>%s</%scon>%s' % (namespace_, self.gds_format_string(quote_xml(self.con).encode(ExternalEncoding), input_name='con'), namespace_, eol_))
+            outfile.write('<%ssub>%s</%ssub>%s' % (namespace_, self.gds_format_string(quote_xml(sub_).encode(ExternalEncoding), input_name='sub'), namespace_, eol_))
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -850,43 +825,286 @@ class cinA(GeneratedsSuper):
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'st':
-            sval_ = child_.text
-            try:
-                ival_ = int(sval_)
-            except (TypeError, ValueError) as exp:
-                raise_parse_error(child_, 'requires integer: %s' % exp)
-            if ival_ < 0:
-                raise_parse_error(child_, 'requires nonNegativeInteger')
-            ival_ = self.gds_validate_integer(ival_, node, 'st')
-            self.st = ival_
-        elif nodeName_ == 'cnf':
-            cnf_ = child_.text
-            cnf_ = self.gds_validate_string(cnf_, node, 'cnf')
-            self.cnf = cnf_
-        elif nodeName_ == 'cs':
-            sval_ = child_.text
-            try:
-                ival_ = int(sval_)
-            except (TypeError, ValueError) as exp:
-                raise_parse_error(child_, 'requires integer: %s' % exp)
-            if ival_ < 0:
-                raise_parse_error(child_, 'requires nonNegativeInteger')
-            ival_ = self.gds_validate_integer(ival_, node, 'cs')
-            self.cs = ival_
-        elif nodeName_ == 'or':
-            or_ = child_.text
-            or_ = self.gds_validate_string(or_, node, 'or')
-            self.or_ = or_
-        elif nodeName_ == 'con':
-            con_ = child_.text
-            con_ = self.gds_validate_string(con_, node, 'con')
-            self.con = con_
-        super(cinA, self).buildChildren(child_, node, nodeName_, True)
-# end class cinA
+        if nodeName_ == 'pv':
+            obj_ = setOfAcrs.factory()
+            obj_.build(child_)
+            self.pv = obj_
+            obj_.original_tagname_ = 'pv'
+        elif nodeName_ == 'pvs':
+            obj_ = setOfAcrs.factory()
+            obj_.build(child_)
+            self.pvs = obj_
+            obj_.original_tagname_ = 'pvs'
+        elif nodeName_ == 'ch':
+            ch_ = child_.text
+            ch_ = self.gds_validate_string(ch_, node, 'ch')
+            self.ch.append(ch_)
+        elif nodeName_ == 'sub':
+            sub_ = child_.text
+            sub_ = self.gds_validate_string(sub_, node, 'sub')
+            self.sub.append(sub_)
+        super(acpA, self).buildChildren(child_, node, nodeName_, True)
+# end class acpA
+
+
+class setOfAcrs(GeneratedsSuper):
+    subclass = None
+    superclass = None
+    def __init__(self, acr=None):
+        self.original_tagname_ = None
+        if acr is None:
+            self.acr = []
+        else:
+            self.acr = acr
+    def factory(*args_, **kwargs_):
+        if setOfAcrs.subclass:
+            return setOfAcrs.subclass(*args_, **kwargs_)
+        else:
+            return setOfAcrs(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_acr(self): return self.acr
+    def set_acr(self, acr): self.acr = acr
+    def add_acr(self, value): self.acr.append(value)
+    def insert_acr_at(self, index, value): self.acr.insert(index, value)
+    def replace_acr_at(self, index, value): self.acr[index] = value
+    def hasContent_(self):
+        if (
+            self.acr
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='m2m:', name_='setOfAcrs', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='setOfAcrs')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='setOfAcrs', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='setOfAcrs'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='m2m:', name_='setOfAcrs', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        for acr_ in self.acr:
+            acr_.export(outfile, level, namespace_, name_='acr', pretty_print=pretty_print)
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        pass
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        if nodeName_ == 'acr':
+            obj_ = acr.factory()
+            obj_.build(child_)
+            self.acr.append(obj_)
+            obj_.original_tagname_ = 'acr'
+# end class setOfAcrs
+
+
+class acr(GeneratedsSuper):
+    subclass = None
+    superclass = None
+    def __init__(self, acor=None, acop=None, acco=None):
+        self.original_tagname_ = None
+        self.acor = acor
+        self.acop = acop
+        # if acco is None:
+        #     self.acco = []
+        # else:
+        #     self.acco = acco
+    def factory(*args_, **kwargs_):
+        if acr.subclass:
+            return acr.subclass(*args_, **kwargs_)
+        else:
+            return acr(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_acor(self): return self.acor
+    def set_acor(self, acor): self.acor = acor
+    def get_acop(self): return self.acop
+    def set_acop(self, acop): self.acop = acop
+    def get_acco(self): return self.acco
+    def set_acco(self, acco): self.acco = acco
+    def add_acco(self, value): self.acco.append(value)
+    def insert_acco_at(self, index, value): self.acco.insert(index, value)
+    def replace_acco_at(self, index, value): self.acco[index] = value
+    def hasContent_(self):
+        if (
+            self.acor is not None or
+            self.acop is not None or
+            self.acco
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='m2m:', name_='acr', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='acr')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='acr', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='acr'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='m2m:', name_='acr', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.acor is not None:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sacor>%s</%sacor>%s' % (namespace_, self.gds_format_string(quote_xml(self.acor).encode(ExternalEncoding), input_name='acor'), namespace_, eol_))
+        if self.acop is not None:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sacop>%s</%sacop>%s' % (namespace_, self.gds_format_string(quote_xml(self.acop).encode(ExternalEncoding), input_name='acop'), namespace_, eol_))
+        for acco_ in self.acco:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sacco>%s</%sacco>%s' % (namespace_, self.gds_format_string(quote_xml(acco_).encode(ExternalEncoding), input_name='acco'), namespace_, eol_))
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        pass
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        if nodeName_ == 'acor':
+            acor_ = child_.text
+            acor_ = self.gds_validate_string(acor_, node, 'acor')
+            self.acor = acor_
+        elif nodeName_ == 'acop':
+            acop_ = child_.text
+            acop_ = self.gds_validate_string(acop_, node, 'acop')
+            self.acop = acop_
+        elif nodeName_ == 'acco':
+            acco_ = child_.text
+            acco_ = self.gds_validate_string(acco_, node, 'acco')
+            self.acco.append(acco_)
+
+    def to_JSON(self):
+        resourceName = self.__class__.__name__
+        self.payload = {"%s"% resourceName:{k: v for k, v in self.__dict__.iteritems() if v is not None}}
+        jsonstr =  json.dumps(self, default=lambda o: o.payload,
+            sort_keys=True, indent=4)
+        num1 = jsonstr.find(":", 0, len(jsonstr))
+        str1 = jsonstr[:num1 + 1]+"["
+        str2 = jsonstr[num1 + 2:len(jsonstr) - 1]
+        jsonstr = str1 + str2 + "]}"
+        return json.loads(jsonstr)
+# end class acr
+
+
+class locationRegion(GeneratedsSuper):
+    subclass = None
+    superclass = None
+    def __init__(self, accc=None, accr=None):
+        self.original_tagname_ = None
+        self.accc = accc
+        self.accr = accr
+    def factory(*args_, **kwargs_):
+        if locationRegion.subclass:
+            return locationRegion.subclass(*args_, **kwargs_)
+        else:
+            return locationRegion(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_accc(self): return self.accc
+    def set_accc(self, accc): self.accc = accc
+    def get_accr(self): return self.accr
+    def set_accr(self, accr): self.accr = accr
+    def hasContent_(self):
+        if (
+            self.accc is not None or
+            self.accr is not None
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='m2m:', name_='locationRegion', namespacedef_='xmlns:m2m="http://www.onem2m.org/xml/protocols"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='locationRegion')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_='m2m:', name_='locationRegion', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='m2m:', name_='locationRegion'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='m2m:', name_='locationRegion', fromsubclass_=False, pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.accc is not None:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%saccc>%s</%saccc>%s' % (namespace_, self.gds_format_string(quote_xml(self.accc).encode(ExternalEncoding), input_name='accc'), namespace_, eol_))
+        if self.accr is not None:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%saccr>%s</%saccr>%s' % (namespace_, self.gds_format_string(quote_xml(self.accr).encode(ExternalEncoding), input_name='accr'), namespace_, eol_))
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        pass
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        if nodeName_ == 'accc':
+            accc_ = child_.text
+            accc_ = self.gds_validate_string(accc_, node, 'accc')
+            self.accc = accc_
+        elif nodeName_ == 'accr':
+            accr_ = child_.text
+            accr_ = self.gds_validate_string(accr_, node, 'accr')
+            self.accr = accr_
+# end class locationRegion
 
 
 GDSClassesMapping = {
+    'acr': acr,
+    'pvs': setOfAcrs,
+    'pv': setOfAcrs,
 }
 
 
@@ -914,8 +1132,8 @@ def parse(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'cin'
-        rootClass = cin
+        rootTag = 'acp'
+        rootClass = acp
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -935,8 +1153,8 @@ def parseEtree(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'cin'
-        rootClass = cin
+        rootTag = 'acp'
+        rootClass = acp
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -960,8 +1178,8 @@ def parseString(inString, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'cin'
-        rootClass = cin
+        rootTag = 'acp'
+        rootClass = acp
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -980,15 +1198,15 @@ def parseLiteral(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'cin'
-        rootClass = cin
+        rootTag = 'acp'
+        rootClass = acp
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
     doc = None
     if not silence:
-        sys.stdout.write('#from contentinstance import *\n\n')
-        sys.stdout.write('import contentinstance as model_\n\n')
+        sys.stdout.write('#from acp import *\n\n')
+        sys.stdout.write('import acp as model_\n\n')
         sys.stdout.write('rootObj = model_.rootClass(\n')
         rootObj.exportLiteral(sys.stdout, 0, name_=rootTag)
         sys.stdout.write(')\n')
@@ -1009,6 +1227,9 @@ if __name__ == '__main__':
 
 
 __all__ = [
-    "cin",
-    "cinA"
+    "acr",
+    "acp",
+    "acpA",
+    "locationRegion",
+    "setOfAcrs"
 ]

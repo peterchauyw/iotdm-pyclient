@@ -28,50 +28,6 @@ cse_payload = '''
 }
 '''
 
-# resourcepayload = '''
-# {
-#     %s
-# }
-# '''
-#
-# ae_payload = '''
-# {
-#     "m2m:ae":{%s}
-# }
-# '''
-#
-# cnt_payload = '''
-# {
-#     "m2m:cnt":{%s}
-# }
-# '''
-#
-# cin_payload = '''
-# {
-#    "m2m:cin":{%s}
-# }
-# '''
-#
-# sub_payload = '''
-# {
-#     "m2m:sub":{%s}
-# }
-# '''
-#
-#
-# def which_payload(restype):
-#     """Choose the correct payload header for each resource."""
-#     restype = int(restype)
-#     if restype == 2:
-#         return ae_payload
-#     elif restype == 3:
-#         return cnt_payload
-#     elif restype == 4:
-#         return cin_payload
-#     elif restype == 23:
-#         return sub_payload
-#     else:
-#         return resourcepayload
 
 
 def find_key(response, key):
@@ -158,95 +114,52 @@ def reconf(server="localhost", base='InCSE1',
             url, data=payload, timeout=timeout)
     return (response.status_code, response.text)
 
-def create(resourceURI, restype, payload=None, name=None):
+def create(resourceURI, restype, payload=None, origin=None, requestID=None):
     """Create resource."""
-    headers['X-M2M-NM'] = name
     headers['content-type'] = 'application/vnd.onem2m-res+json;ty=%s' % (restype)
+    if origin is not None:
+        headers['X-M2M-Origin'] = origin
+    if requestID is not None:
+        headers['X-M2M-RI'] = requestID
     response = session.post(
         resourceURI, payload, timeout=timeout, headers=headers)
     return (response.status_code, response.text)
 
-# def createWithCommand(parent, restype,
-#                       command, attr=None, name=None):
-#     """Create resource."""
-#     payload = which_payload(restype)
-#     payload = payload % (attr)
-#     headers['X-M2M-NM'] = name
-#     headers['content-type'] = 'application/vnd.onem2m-res+json;ty=%s' % (restype)
-#     url = server + ":8282/%s?%s" % (
-#         parent, command)
-#     response = session.post(
-#         url, payload, timeout=timeout, headers=headers)
-#     return response
-
-def retrieve(resourceURI):
+def retrieve(resourceURI, origin=None, requestID=None):
     """Retrieve resource."""
     headers['content-type'] = 'application/vnd.onem2m-res+json'
+    if origin is not None:
+        headers['X-M2M-Origin'] = origin
+    if requestID is not None:
+        headers['X-M2M-RI'] = requestID
     response = session.get(
         resourceURI, timeout=timeout, headers=headers
     )
     return (response.status_code, response.text)
 
-# def retrieveWithCommand(resourceURI, command):
-#     """Retrieve resource with command."""
-#     if resourceURI is None:
-#         return None
-#     if command is None:
-#         return None
-#     resourceURI = normalize(resourceURI)
-#     url = server + ":8282/%s?%s" % (resourceURI, command)
-#     headers['X-M2M-NM'] = None
-#     headers['content-type'] = 'application/vnd.onem2m-res+json'
-#     response = session.get(
-#         url, timeout=timeout, headers=headers
-#     )
-#     return response
-
-def update(resourceURI, restype, payload=None):
+def update(resourceURI, payload=None, origin=None, requestID=None):
     """Update resource attr."""
     headers['content-type'] = 'application/vnd.onem2m-res+json'
+    if origin is not None:
+        headers['X-M2M-Origin'] = origin
+    if requestID is not None:
+        headers['X-M2M-RI'] = requestID
     response = session.put(
         resourceURI, data=payload, timeout=timeout, headers=headers
     )
     return (response.status_code, response.text)
 
-# def updateWithCommand(resourceURI, restype,
-#                       command, attr=None, name=None):
-#     """Update resource attr."""
-#     if resourceURI is None:
-#         return None
-#     resourceURI = normalize(resourceURI)
-#     payload = which_payload(restype)
-#     payload = payload % (attr)
-#     if name is None:
-#         headers['X-M2M-NM'] = None
-#     else:
-#         headers['X-M2M-NM'] = name
-#     headers['content-type'] = 'application/vnd.onem2m-res+json'
-#     url = server + ":8282/%s?%s" % (resourceURI, command)
-#     response = session.put(
-#         url, payload, timeout=timeout, headers=headers)
-#     return response
-
-def delete(resourceURI):
+def delete(resourceURI, origin=None, requestID=None):
     """Delete the resource with the provresourceURIed resourceURI."""
     headers['content-type'] = 'application/vnd.onem2m-res+json'
+    if origin is not None:
+        headers['X-M2M-Origin'] = origin
+    if requestID is not None:
+        headers['X-M2M-RI'] = requestID
     response = session.delete(
         resourceURI, timeout=timeout, headers=headers
     )
     return (response.status_code, response.text)
-
-# def deleteWithCommand(resourceURI, command):
-#     """Delete the resource with the provresourceURIed resourceURI."""
-#     if resourceURI is None:
-#         return None
-#     resourceURI = normalize(resourceURI)
-#     url = server + ":8282/%s?%s" % (resourceURI, command)
-#     headers['X-M2M-NM'] = None
-#     headers['content-type'] = 'application/vnd.onem2m-res+json'
-#     response = session.delete(url, timeout=timeout,
-#                                         headers=headers)
-#     return response
 
 def tree():
     """Get the resource tree."""

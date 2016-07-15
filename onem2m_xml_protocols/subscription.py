@@ -24,6 +24,7 @@ import base64
 import datetime as datetime_
 import warnings as warnings_
 from lxml import etree as etree_
+from onem2m_xml_protocols.common import announceableResource
 
 
 Validate_simpletypes_ = True
@@ -616,7 +617,7 @@ def _cast(typ, value):
 #
 
 
-class sub(GeneratedsSuper):
+class sub(announceableResource):
     subclass = None
     superclass = None
     def __init__(self, enc=None, exc=None, nu=None, gpi=None, nfu=None, bn=None, rl=None, psn=None, pn=None, nsp=None, ln=None, nct=None, nec=None, cr=None, su=None, ch=None, sch=None):

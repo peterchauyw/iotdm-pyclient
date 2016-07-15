@@ -23,17 +23,17 @@ def cleanup(URI, username, password):
     print str(response[0]) + '\n' + response[1]
 
 
-def create(URI, resource_type, resource_name, payload):
+def create(URI, resource_type, payload, origin=None, requestID=None):
     uri = urlparse(URI)
     if uri.scheme == "http":
-        response = ciotdm.create(URI, resource_type, payload, resource_name)
+        response = ciotdm.create(URI, resource_type, payload, origin, requestID)
         print str(response[0]) + '\n' + response[1]
 
     elif uri.scheme == "coap":
         log.startLogging(sys.stdout)
         endpoint = resource.Endpoint(None)
         protocol = coap.Coap(endpoint)
-        Agent(protocol, "post", URI, payload=payload, ty=resource_type, nm=resource_name)
+        Agent(protocol, "post", URI, payload=payload, ty=resource_type, origin=origin, requestID=requestID)
         reactor.listenUDP(0, protocol)
         reactor.run()
 
@@ -41,17 +41,17 @@ def create(URI, resource_type, resource_name, payload):
         print "Invalid protocol."
         sys.exit(2)
 
-def retrieve(URI):
+def retrieve(URI, origin=None, requestID=None):
     uri = urlparse(URI)
     if uri.scheme == "http":
-        response = ciotdm.retrieve(URI)
+        response = ciotdm.retrieve(URI, origin, requestID)
         print str(response[0]) + '\n' + response[1]
 
     elif uri.scheme == "coap":
         log.startLogging(sys.stdout)
         endpoint = resource.Endpoint(None)
         protocol = coap.Coap(endpoint)
-        Agent(protocol, "get", URI)
+        Agent(protocol, "get", URI, origin=origin, requestID=requestID)
         reactor.listenUDP(0, protocol)
         reactor.run()
 
@@ -60,17 +60,17 @@ def retrieve(URI):
         sys.exit(2)
 
 
-def update(URI, resource_type, payload):
+def update(URI, payload, origin=None, requestID=None):
     uri = urlparse(URI)
     if uri.scheme == "http":
-        response = ciotdm.update(URI, resource_type, payload)
+        response = ciotdm.update(URI, payload, origin, requestID)
         print str(response[0]) + '\n' + response[1]
 
     elif uri.scheme == "coap":
         log.startLogging(sys.stdout)
         endpoint = resource.Endpoint(None)
         protocol = coap.Coap(endpoint)
-        Agent(protocol, "put", URI, payload=payload, ty=resource_type)
+        Agent(protocol, "put", URI, payload=payload, origin=origin, requestID=requestID)
         reactor.listenUDP(0, protocol)
         reactor.run()
 
@@ -78,17 +78,17 @@ def update(URI, resource_type, payload):
         print "Invalid protocol."
         sys.exit(2)
 
-def delete(URI):
+def delete(URI, origin=None, requestID=None):
     uri = urlparse(URI)
     if uri.scheme == "http":
-        response = ciotdm.delete(URI)
+        response = ciotdm.delete(URI, origin, requestID)
         print str(response[0]) + '\n' + response[1]
 
     elif uri.scheme == "coap":
         log.startLogging(sys.stdout)
         endpoint = resource.Endpoint(None)
         protocol = coap.Coap(endpoint)
-        Agent(protocol, "delete", URI)
+        Agent(protocol, "delete", URI, origin=origin, requestID=requestID)
         reactor.listenUDP(0, protocol)
         reactor.run()
 
