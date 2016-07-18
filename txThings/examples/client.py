@@ -14,7 +14,7 @@ from urlparse import urlparse
 import OneM2M
 import socket
 
-from twisted.internet.defer import Deferred
+# from twisted.internet.defer import Deferred
 from twisted.internet.protocol import DatagramProtocol
 from twisted.internet import reactor
 from twisted.python import log
