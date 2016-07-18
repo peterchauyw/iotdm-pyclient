@@ -9,29 +9,18 @@ Modified on 01-07-2016
 '''
 
 import sys
-import time
 from urlparse import urlparse
 import OneM2M
 import socket
-
-# from twisted.internet.defer import Deferred
-from twisted.internet.protocol import DatagramProtocol
 from twisted.internet import reactor
-from twisted.python import log
-
 import txThings.txthings.coap as coap
-import txThings.txthings.resource as resource
+# from twisted.internet.defer import Deferred
+# from twisted.internet.protocol import DatagramProtocol
+# from twisted.python import log
+# import txThings.txthings.resource as resource
 
 
 class Agent():
-    """
-    Example class which performs single PUT request to iot.eclipse.org
-    port 5683 (official IANA assigned CoAP port), URI "/large-update".
-    Request is sent 1 second after initialization.
-
-    Payload is bigger than 64 bytes, and with default settings it
-    should be sent as several blocks.
-    """
 
     def __init__(self, protocol, op, uri, payload=None, ty=None, origin=None, requestID=None):
         self.protocol = protocol

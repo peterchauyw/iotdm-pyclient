@@ -39,11 +39,11 @@ from onem2m_xml_protocols.firmware import fwr
 # iotdm_api.create("http://localhost:8282/ODL-oneM2M-Cse/TestAE", 3, payload)
 
 '''Content-instance Creation'''
-# subscription = sub()
-# subscription.set_nu(["http://localhost"])
-# subscription.set_rn("TestSubscription")
-# payload  = subscription.to_JSON()
-# iotdm_api.create("coap://localhost:5683/ODL-oneM2M-Cse/TestAE/TestContainer", 23, payload)
+subscription = sub()
+subscription.set_nu(["http://localhost"])
+subscription.set_rn("TestSubscription")
+payload  = subscription.to_JSON()
+iotdm_api.create("coap://localhost:5683/ODL-oneM2M-Cse/TestAE/TestContainer", 23, payload)
 
 
 '''Subscription creation'''
