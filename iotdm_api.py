@@ -11,6 +11,19 @@ import txThings.txthings.resource as resource
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 def restConf(URI, Cse_name, username, password):
     uri = urlparse(URI)
     response = ciotdm.reconf(uri.netloc, Cse_name, (username, password))

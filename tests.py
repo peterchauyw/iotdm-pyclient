@@ -65,5 +65,3 @@ iotdm_api.create("coap://localhost:5683/ODL-oneM2M-Cse/TestAE/TestContainer", 23
 # AE.set_acpi(["ODL-oneM2M-Cse/TestAE/TestACP"])
 # payload = AE.to_JSON()
 # iotdm_api.update("coap://localhost:5683/ODL-oneM2M-Cse/TestAE", payload)
-
-
